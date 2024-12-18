@@ -14,3 +14,6 @@ redis:
   port: 6379
   password: "123321"
   db: 1
+grpc:
+  name: "user"
+  addr: "127.0.0.1:8881"

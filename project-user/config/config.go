@@ -13,9 +13,15 @@ var Conf = InitConfig()
 type Config struct {
 	viper *viper.Viper
 	SC    *ServerConfig
+	GC    *GrpcConfig
 }
 
 type ServerConfig struct {
+	Name string
+	Addr string
+}
+
+type GrpcConfig struct {
 	Name string
 	Addr string
 }
@@ -35,6 +41,7 @@ func InitConfig() *Config {
 	}
 	conf.ReadServerConfig()
 	conf.InitZapLog()
+	conf.ReadGrpcConfig()
 	return conf
 }
 
@@ -43,6 +50,13 @@ func (c *Config) ReadServerConfig() {
 	sc.Name = c.viper.GetString("server.name")
 	sc.Addr = c.viper.GetString("server.addr")
 	c.SC = sc
+}
+
+func (c *Config) ReadGrpcConfig() {
+	gc := &GrpcConfig{}
+	gc.Name = c.viper.GetString("grpc.name")
+	gc.Addr = c.viper.GetString("grpc.addr")
+	c.GC = gc
 }
 
 func (c *Config) InitZapLog() {
