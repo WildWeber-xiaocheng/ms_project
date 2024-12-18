@@ -1,6 +1,6 @@
 server:
-  name: "project-user"
-  addr: "127.0.0.1:8080"
+  name: "project-api"
+  addr: "127.0.0.1:80"
 
 zap:
   debugFileName: "C:\\goCode\\ms_project\\logs\\debug\\project-debug.log"
@@ -9,11 +9,3 @@ zap:
   maxSize: 500,
   maxAge: 28,
   MaxBackups: 3
-redis:
-  host: "192.168.40.134"
-  port: 6379
-  password: "123321"
-  db: 1
-grpc:
-  name: "user"
-  addr: "127.0.0.1:8881"

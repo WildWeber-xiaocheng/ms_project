@@ -1,6 +1,7 @@
 go 1.23.2
 
 use (
-	./project-user
+	./project-api
 	./project-common
+	./project-user
 )

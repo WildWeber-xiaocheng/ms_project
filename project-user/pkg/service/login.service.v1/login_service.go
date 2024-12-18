@@ -49,5 +49,5 @@ func (ls *LoginService) GetCaptcha(ctx context.Context, msg *CaptchaMessage) (*C
 	}()
 	//6、响应 正常真实情况不会返回code，所以上面的发送验证码会用go协程，因为不用返回数据，所以用协程处理发送验证码来快速响应本接口
 	//ctx.JSON(http.StatusOK, rsp.Success(code))
-	return &CaptchaResponse{}, nil
+	return &CaptchaResponse{Code: code}, nil
 }
