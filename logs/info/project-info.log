@@ -1,3 +1,5 @@
 {"level":"INFO","time":"2024-12-17T22:21:13.444+0800","caller":"user/user.go:41","msg":"短信平台调用成功，发送短信"}
 {"level":"INFO","time":"2024-12-17T23:16:27.151+0800","caller":"user/user.go:41","msg":"短信平台调用成功，发送短信"}
 {"level":"INFO","time":"2024-12-17T23:35:25.554+0800","caller":"user/user.go:41","msg":"短信平台调用成功，发送短信"}
+{"level":"INFO","time":"2024-12-18T23:42:14.755+0800","caller":"login.service.v1/login_service.go:40","msg":"短信平台调用成功，发送短信"}
+{"level":"INFO","time":"2024-12-19T21:50:59.673+0800","caller":"login.service.v1/login_service.go:41","msg":"短信平台调用成功，发送短信"}
