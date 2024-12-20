@@ -3,3 +3,5 @@
 {"level":"INFO","time":"2024-12-17T23:35:25.554+0800","caller":"user/user.go:41","msg":"短信平台调用成功，发送短信"}
 {"level":"INFO","time":"2024-12-18T23:42:14.755+0800","caller":"login.service.v1/login_service.go:40","msg":"短信平台调用成功，发送短信"}
 {"level":"INFO","time":"2024-12-19T21:50:59.673+0800","caller":"login.service.v1/login_service.go:41","msg":"短信平台调用成功，发送短信"}
+{"level":"INFO","time":"2024-12-20T22:40:13.437+0800","caller":"login.service.v1/login_service.go:42","msg":"短信平台调用成功，发送短信"}
+{"level":"ERROR","time":"2024-12-20T23:12:17.297+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}

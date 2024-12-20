@@ -11,9 +11,10 @@ import (
 var Conf = InitConfig()
 
 type Config struct {
-	viper *viper.Viper
-	SC    *ServerConfig
-	GC    *GrpcConfig
+	viper      *viper.Viper
+	SC         *ServerConfig
+	GC         *GrpcConfig
+	EtcdConfig *EtcdConfig
 }
 
 type ServerConfig struct {
@@ -22,8 +23,14 @@ type ServerConfig struct {
 }
 
 type GrpcConfig struct {
-	Name string
-	Addr string
+	Name    string
+	Addr    string
+	Version string
+	Weight  int64
+}
+
+type EtcdConfig struct {
+	Addrs []string
 }
 
 func InitConfig() *Config {
@@ -42,6 +49,7 @@ func InitConfig() *Config {
 	conf.ReadServerConfig()
 	conf.InitZapLog()
 	conf.ReadGrpcConfig()
+	conf.ReadEtcdConfig()
 	return conf
 }
 
@@ -56,7 +64,20 @@ func (c *Config) ReadGrpcConfig() {
 	gc := &GrpcConfig{}
 	gc.Name = c.viper.GetString("grpc.name")
 	gc.Addr = c.viper.GetString("grpc.addr")
+	gc.Version = c.viper.GetString("grpc.version")
+	gc.Weight = c.viper.GetInt64("grpc.weight")
 	c.GC = gc
+}
+
+func (c *Config) ReadEtcdConfig() {
+	ec := &EtcdConfig{}
+	var addrs []string
+	err := c.viper.UnmarshalKey("etcd.addrs", &addrs)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	ec.Addrs = addrs
+	c.EtcdConfig = ec
 }
 
 func (c *Config) InitZapLog() {
