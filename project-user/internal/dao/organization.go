@@ -2,6 +2,7 @@ package dao
 
 import (
 	"context"
+	"test.com/project-user/internal/data/organization"
 	"test.com/project-user/internal/database/gorms"
 )
 

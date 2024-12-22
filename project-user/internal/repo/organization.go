@@ -1,7 +1,10 @@
 package repo
 
-import "context"
+import (
+	"context"
+	"test.com/project-user/internal/data/organization"
+)
 
 type OrganizationRepo interface {
-	SaveOrganization(ctx context.Context, org any) error
+	SaveOrganization(ctx context.Context, org *organization.Organization) error
 }
