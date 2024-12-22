@@ -10,9 +10,9 @@ zap:
   maxAge: 28,
   MaxBackups: 3
 redis:
-  host: "192.168.40.134"
+  host: "127.0.0.1"
   port: 6379
-  password: "123321"
+  password: "123456"
   db: 1
 grpc:
   name: "user"
