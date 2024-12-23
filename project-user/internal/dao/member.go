@@ -3,6 +3,7 @@ package dao
 import (
 	"context"
 	"test.com/project-user/internal/data/member"
+	"test.com/project-user/internal/database"
 	"test.com/project-user/internal/database/gorms"
 )
 
@@ -16,8 +17,10 @@ func NewMemberDao() *MemberDao {
 	}
 }
 
-func (m *MemberDao) SaveMember(ctx context.Context, mem *member.Member) error {
-	return m.conn.Session(ctx).Create(mem).Error
+func (m *MemberDao) SaveMember(conn database.DbConn, ctx context.Context, mem *member.Member) error {
+	//将数据库连接转为gorm连接
+	m.conn = conn.(*gorms.GormConn)
+	return m.conn.Tx(ctx).Create(mem).Error
 }
 
 func (m *MemberDao) GetMemberByEmail(ctx context.Context, email string) (bool, error) {
