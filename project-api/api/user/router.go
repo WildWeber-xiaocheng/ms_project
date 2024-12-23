@@ -6,13 +6,14 @@ import (
 	"test.com/project-api/router"
 )
 
-func init() {
-	log.Println("init user router")
-	router.RegisterR(&RouterUser{})
-}
-
 // Route 接口的实现类
 type RouterUser struct {
+}
+
+func init() {
+	log.Println("init user router")
+	ru := &RouterUser{}
+	router.RegisterR(ru)
 }
 
 func (*RouterUser) Register(r *gin.Engine) {

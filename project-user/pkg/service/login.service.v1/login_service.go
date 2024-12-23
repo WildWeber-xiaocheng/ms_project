@@ -2,6 +2,7 @@ package login_service_v1
 
 import (
 	"context"
+	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 	"log"
 	common "test.com/project-common"
@@ -67,6 +68,12 @@ func (ls *LoginService) Register(ctx context.Context, msg *login.RegisterMessage
 	//2. 校验验证码
 	c := context.Background()
 	redisCode, err := ls.cache.Get(c, model.RegisterRedisKey+msg.Mobile)
+
+	//redis中查不到key时也返回错误
+	if err == redis.Nil {
+		return nil, errs.GrpcError(model.CaptchaNotExist)
+	}
+
 	if err != nil {
 		zap.L().Error("Register redis get error", zap.Error(err))
 		return nil, errs.GrpcError(model.RedisError)
