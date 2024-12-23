@@ -15,6 +15,10 @@ import (
 type HandlerUser struct {
 }
 
+func New() *HandlerUser {
+	return &HandlerUser{}
+}
+
 func (h *HandlerUser) GetCaptcha(ctx *gin.Context) {
 	rsp := &common.Result{}
 	//1、获取参数

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add login">
+      <change afterPath="$PROJECT_DIR$/project-user/internal/database/conn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-user/internal/database/tran/tran.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/user/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/pkg/model/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/model/code.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/internal/database/gorms/gorms.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/database/gorms/gorms.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

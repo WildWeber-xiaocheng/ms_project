@@ -22,6 +22,7 @@ type LoginService struct {
 	cache            repo.Cache
 	memberRepo       repo.MemberRepo
 	organizationRepo repo.OrganizationRepo
+	//transaction      tran.Transaction
 }
 
 func New() *LoginService {
@@ -73,7 +74,6 @@ func (ls *LoginService) Register(ctx context.Context, msg *login.RegisterMessage
 	if err == redis.Nil {
 		return nil, errs.GrpcError(model.CaptchaNotExist)
 	}
-
 	if err != nil {
 		zap.L().Error("Register redis get error", zap.Error(err))
 		return nil, errs.GrpcError(model.RedisError)
@@ -121,6 +121,7 @@ func (ls *LoginService) Register(ctx context.Context, msg *login.RegisterMessage
 		LastLoginTime: time.Now().UnixMilli(),
 		Status:        model.Normal,
 	}
+	//err = ls.transaction.Action(func(conn database.DbConn) error {
 	err = ls.memberRepo.SaveMember(c, mem)
 	if err != nil {
 		zap.L().Error("Register db SaveMember error", zap.Error(err))
@@ -138,7 +139,8 @@ func (ls *LoginService) Register(ctx context.Context, msg *login.RegisterMessage
 		zap.L().Error("register SaveOrganization db err", zap.Error(err))
 		return nil, model.DBError
 	}
-
+	//return nil
+	//})
 	//5. 返回结果
 	return &login.RegisterResponse{}, nil
 }
