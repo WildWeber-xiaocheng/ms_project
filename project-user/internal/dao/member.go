@@ -2,6 +2,7 @@ package dao
 
 import (
 	"context"
+	"gorm.io/gorm"
 	"test.com/project-user/internal/data/member"
 	"test.com/project-user/internal/database"
 	"test.com/project-user/internal/database/gorms"
@@ -9,6 +10,15 @@ import (
 
 type MemberDao struct {
 	conn *gorms.GormConn
+}
+
+func (m *MemberDao) FindMember(ctx context.Context, account string, pwd string) (*member.Member, error) {
+	var mem *member.Member
+	err := m.conn.Session(ctx).Where("account = ? and password = ?", account, pwd).First(&mem).Error
+	if err == gorm.ErrRecordNotFound { //没找到数据
+		return nil, nil
+	}
+	return mem, err
 }
 
 func NewMemberDao() *MemberDao {

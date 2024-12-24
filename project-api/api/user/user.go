@@ -77,3 +77,37 @@ func (h *HandlerUser) Register(c *gin.Context) {
 	//4. 返回结果
 	c.JSON(http.StatusOK, result.Success(""))
 }
+
+func (h *HandlerUser) Login(c *gin.Context) {
+	result := &common.Result{}
+	//1. 接收参数
+	var req user.LoginReq
+	err := c.ShouldBind(&req)
+	if err != nil {
+		c.JSON(http.StatusOK, result.Fail(http.StatusBadRequest, "参数传递有误"))
+		return
+	}
+	//2. 调用user grpc 完成登录
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	msg := &login.LoginMessage{}
+	err = copier.Copy(msg, req)
+	if err != nil {
+		c.JSON(http.StatusOK, result.Fail(http.StatusBadRequest, "copy有误"))
+		return
+	}
+	loginRsp, err := LoginServiceClient.Login(ctx, msg)
+	if err != nil {
+		code, msg := errs.ParseGrpcError(err)
+		c.JSON(http.StatusOK, result.Fail(code, msg))
+		return
+	}
+	rsp := &user.LoginRsp{}
+	err = copier.Copy(rsp, loginRsp)
+	if err != nil {
+		c.JSON(http.StatusOK, result.Fail(http.StatusBadRequest, "copy有误"))
+		return
+	}
+	//4. 返回结果
+	c.JSON(http.StatusOK, result.Success(rsp))
+}

@@ -21,4 +21,5 @@ func (*RouterUser) Register(r *gin.Engine) {
 	user := New()
 	r.POST("/project/login/getCaptcha", user.GetCaptcha)
 	r.POST("/project/login/register", user.Register)
+	r.POST("/project/login", user.Login)
 }

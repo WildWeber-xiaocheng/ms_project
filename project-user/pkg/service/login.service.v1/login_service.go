@@ -2,6 +2,7 @@ package login_service_v1
 
 import (
 	"context"
+	"github.com/jinzhu/copier"
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 	"log"
@@ -146,4 +147,45 @@ func (ls *LoginService) Register(ctx context.Context, msg *login.RegisterMessage
 	})
 	//5. 返回结果
 	return &login.RegisterResponse{}, err
+}
+
+func (ls *LoginService) Login(ctx context.Context, msg *login.LoginMessage) (*login.LoginResponse, error) {
+	c := context.Background()
+	//1. 去数据库查询账号和密码，看是否正确
+	pwd := encrypts.Md5(msg.Password) //因为在注册的时候进行md5加密了，所以这里也需要加密一下
+	mem, err := ls.memberRepo.FindMember(c, msg.Account, pwd)
+	if err != nil {
+		//if errors.Is(err, model.DataIsNull) {
+		//	return &LoginResponse{}, model.AccountAndPwdError
+		//}
+		zap.L().Error("Login FindMember db fail", zap.Error(err))
+		return &login.LoginResponse{}, errs.GrpcError(model.DBError)
+	}
+	if mem == nil {
+		return &login.LoginResponse{}, errs.GrpcError(model.AccountAndPwdError)
+	}
+
+	memMsg := &login.MemberMessage{}
+	err = copier.Copy(memMsg, mem)
+	//2. 登录成功 根据用户id查询组织
+	orgs, err := ls.organizationRepo.FindOrganizationByMemId(c, mem.Id)
+	if err != nil {
+		zap.L().Error("Login FindOrganizationByMemId db fail", zap.Error(err))
+		return &login.LoginResponse{}, errs.GrpcError(model.DBError)
+	}
+	var orgsMessage []*login.OrganizationMessage
+	err = copier.Copy(&orgsMessage, orgs)
+
+	//jwtToken := jwts.CreateToken(strconv.FormatInt(member.Id, 10), "msproject", 3600*24*7*time.Second, 3600*24*14*time.Second)
+	//tokenList := &TokenMessage{
+	//	AccessToken:    jwtToken.AccessToken,
+	//	RefreshToken:   jwtToken.RefreshToken,
+	//	AccessTokenExp: jwtToken.AccessExp.Milliseconds() / 1000,
+	//	TokenType:      "bearer",
+	//}
+
+	return &login.LoginResponse{
+		Member:           memMsg,
+		OrganizationList: orgsMessage,
+	}, nil
 }
