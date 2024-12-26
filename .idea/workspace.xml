@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add register">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add login logic">
+      <change afterPath="$PROJECT_DIR$/project-common/jwts/jwts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/user/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/user/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-grpc/user/login/login_service_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/internal/dao/member.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/dao/member.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/internal/dao/organization.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/dao/organization.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/internal/repo/member.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/repo/member.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/internal/repo/organization.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/repo/organization.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/pkg/model/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/model/code.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-common/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-common/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/config/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +141,8 @@
     <MESSAGE value="add login" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;project-user/internal/database/conn.go&#10;#&#9;project-user/pkg/service/login.service.v1/login_service.go" />
     <MESSAGE value="add register" />
-    <option name="LAST_COMMIT_MESSAGE" value="add register" />
+    <MESSAGE value="add login logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="add login logic" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

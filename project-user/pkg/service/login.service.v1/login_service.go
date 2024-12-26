@@ -6,10 +6,13 @@ import (
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 	"log"
+	"strconv"
 	common "test.com/project-common"
 	"test.com/project-common/encrypts"
 	"test.com/project-common/errs"
+	"test.com/project-common/jwts"
 	"test.com/project-grpc/user/login"
+	"test.com/project-user/config"
 	"test.com/project-user/internal/dao"
 	"test.com/project-user/internal/data/member"
 	"test.com/project-user/internal/data/organization"
@@ -175,17 +178,21 @@ func (ls *LoginService) Login(ctx context.Context, msg *login.LoginMessage) (*lo
 	}
 	var orgsMessage []*login.OrganizationMessage
 	err = copier.Copy(&orgsMessage, orgs)
-
-	//jwtToken := jwts.CreateToken(strconv.FormatInt(member.Id, 10), "msproject", 3600*24*7*time.Second, 3600*24*14*time.Second)
-	//tokenList := &TokenMessage{
-	//	AccessToken:    jwtToken.AccessToken,
-	//	RefreshToken:   jwtToken.RefreshToken,
-	//	AccessTokenExp: jwtToken.AccessExp.Milliseconds() / 1000,
-	//	TokenType:      "bearer",
-	//}
-
+	//3. 用jwt生成token
+	memIdStr := strconv.FormatInt(mem.Id, 10)
+	exp := 7 * 3600 * 24 * time.Second
+	rExp := 14 * 3600 * 24 * time.Second
+	token := jwts.CreateToken(memIdStr, exp, config.Conf.JwtConfig.AccessSecret,
+		rExp, config.Conf.JwtConfig.RefreshSecret)
+	tokenList := &login.TokenMessage{
+		AccessToken:    token.AccessToken,
+		RefreshToken:   token.RefreshToken,
+		AccessTokenExp: token.AccessExp,
+		TokenType:      "bearer", //先固定为这个字段
+	}
 	return &login.LoginResponse{
 		Member:           memMsg,
 		OrganizationList: orgsMessage,
+		TokenList:        tokenList,
 	}, nil
 }

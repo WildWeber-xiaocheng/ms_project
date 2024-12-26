@@ -5,4 +5,7 @@ out
 gen
 *.bat
 *.exe
-logs
+*.log
+
+
+
