@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add login logic">
-      <change afterPath="$PROJECT_DIR$/project-common/jwts/jwts.go" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add login logic about jwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-common/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-common/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/config/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +135,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;project-user/internal/database/conn.go&#10;#&#9;project-user/pkg/service/login.service.v1/login_service.go" />
     <MESSAGE value="add register" />
     <MESSAGE value="add login logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="add login logic" />
+    <MESSAGE value="add login logic about jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add login logic about jwt" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

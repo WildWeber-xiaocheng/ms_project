@@ -180,8 +180,9 @@ func (ls *LoginService) Login(ctx context.Context, msg *login.LoginMessage) (*lo
 	err = copier.Copy(&orgsMessage, orgs)
 	//3. 用jwt生成token
 	memIdStr := strconv.FormatInt(mem.Id, 10)
-	exp := 7 * 3600 * 24 * time.Second
-	rExp := 14 * 3600 * 24 * time.Second
+	//尽管time.Second是int64，但是这里不能直接相乘
+	exp := time.Duration(config.Conf.JwtConfig.AccessExp*3600*24) * time.Second
+	rExp := time.Duration(config.Conf.JwtConfig.RefreshExp*3600*24) * time.Second
 	token := jwts.CreateToken(memIdStr, exp, config.Conf.JwtConfig.AccessSecret,
 		rExp, config.Conf.JwtConfig.RefreshSecret)
 	tokenList := &login.TokenMessage{
