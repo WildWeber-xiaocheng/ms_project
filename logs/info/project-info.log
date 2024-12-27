@@ -22,3 +22,5 @@
 {"level":"ERROR","time":"2024-12-24T21:11:58.308+0800","caller":"login.service.v1/login_service.go:142","msg":"register SaveOrganization db err","error":"Error 1406 (22001): Data too long for column 'avatar' at row 1"}
 {"level":"INFO","time":"2024-12-24T21:13:08.220+0800","caller":"login.service.v1/login_service.go:55","msg":"短信平台调用成功，发送短信"}
 {"level":"INFO","time":"2024-12-24T22:53:46.499+0800","caller":"login.service.v1/login_service.go:56","msg":"短信平台调用成功，发送短信"}
+{"level":"ERROR","time":"2024-12-27T23:22:43.471+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2024-12-27T23:24:21.048+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}

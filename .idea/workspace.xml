@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add login logic about jwt">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="fix jwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/user/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-common/encrypts/encrypts.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/encrypts/encrypts.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/pkg/model/biz.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/model/biz.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,26 +55,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build main.go.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build test.com/project-user.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/goCode/ms_project/project-grpc/user/login&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build main.go.executor": "Debug",
+    "Go Build.go build test.com/project-user.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/goCode/ms_project/project-grpc/user/login",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\goCode\ms_project\project-grpc\user\login" />
@@ -78,7 +86,7 @@
       <recent name="C:\goCode\ms_project\project-user\internal" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build test.com/project-user">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ms_project" />
       <working_directory value="$PROJECT_DIR$/project-api" />
@@ -98,8 +106,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build test.com/project-user" />
+        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +144,8 @@
     <MESSAGE value="add register" />
     <MESSAGE value="add login logic" />
     <MESSAGE value="add login logic about jwt" />
-    <option name="LAST_COMMIT_MESSAGE" value="add login logic about jwt" />
+    <MESSAGE value="fix jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix jwt" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
