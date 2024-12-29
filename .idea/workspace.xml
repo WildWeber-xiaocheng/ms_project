@@ -4,17 +4,37 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="fix jwt">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加 project-project模块以及/project/index接口的实现">
+      <change afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/api/project/rpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-grpc/project/project_service.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-grpc/project/project_service_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/config/config-docker.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/config/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/dao.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/menu.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/data/menu/menu.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/database/conn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/database/gorms/gorms.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/database/tran/tran.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/cache.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/menu.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/pkg/model/biz.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/pkg/model/code.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/pkg/model/redis_key.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/router/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/user/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-common/encrypts/encrypts.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/encrypts/encrypts.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.work" beforeDir="false" afterPath="$PROJECT_DIR$/go.work" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/api.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/pkg/model/biz.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/model/biz.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-grpc/user/login/login_service_grpc.pb.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +79,8 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultGoTemplateProperty": "Go File",
-    "Go Build.go build main.go.executor": "Debug",
+    "Go Build.go build main.go.executor": "Run",
+    "Go Build.go build test.com/project-project.executor": "Run",
     "Go Build.go build test.com/project-user.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -68,7 +89,7 @@
     "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/goCode/ms_project/project-grpc/user/login",
+    "last_opened_file_path": "C:/goCode/ms_project/project-grpc/project",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -77,10 +98,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\goCode\ms_project\project-grpc\project" />
+      <recent name="C:\goCode\ms_project\project-api\api\project" />
+      <recent name="C:\goCode\ms_project\project-project" />
       <recent name="C:\goCode\ms_project\project-grpc\user\login" />
       <recent name="C:\goCode\ms_project\project-api\api\user\user_grpc" />
-      <recent name="C:\goCode\ms_project\project-user\pkg\service\login.service.v1" />
-      <recent name="C:\goCode\ms_project\project-user\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\goCode\ms_project\project-user\internal" />
@@ -93,6 +115,15 @@
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/project-api/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build test.com/project-project" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ms_project" />
+      <working_directory value="$PROJECT_DIR$/project-project" />
+      <kind value="PACKAGE" />
+      <package value="test.com/project-project" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/project-project/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build test.com/project-user" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -108,6 +139,7 @@
       <list>
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build test.com/project-project" />
       </list>
     </recent_temporary>
   </component>
@@ -145,9 +177,22 @@
     <MESSAGE value="add login logic" />
     <MESSAGE value="add login logic about jwt" />
     <MESSAGE value="fix jwt" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix jwt" />
+    <MESSAGE value="fix: 对id进行加密" />
+    <MESSAGE value="add:添加 project-project模块以及/project/index接口的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:添加 project-project模块以及/project/index接口的实现" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go</url>
+          <line>197</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
