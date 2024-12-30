@@ -13,7 +13,7 @@ import (
 
 var ProjectServiceClient project.ProjectServiceClient
 
-func InitRpcUserClient() {
+func InitRpcProjectClient() {
 	etcdRegister := discovery.NewResolver(config.Conf.EtcdConfig.Addrs, logs.LG)
 	resolver.Register(etcdRegister)
 

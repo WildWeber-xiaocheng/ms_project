@@ -5,7 +5,7 @@ import (
 	"github.com/jinzhu/copier"
 	"go.uber.org/zap"
 	"test.com/project-common/errs"
-	project "test.com/project-grpc/project"
+	"test.com/project-grpc/project"
 	"test.com/project-project/internal/dao"
 	"test.com/project-project/internal/data/menu"
 	"test.com/project-project/internal/database/tran"
