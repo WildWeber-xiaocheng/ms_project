@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加 project-project模块以及/project/index接口的实现">
-      <change afterPath="$PROJECT_DIR$/project-api/api/midd/midd.go" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加 验证用户是否登录功能">
+      <change afterPath="$PROJECT_DIR$/project-common/code_gen/code_gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-common/code_gen/code_gen_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-common/code_gen/message.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-common/code_gen/struct.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/project.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/data/pro/pro.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/project.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/rpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-common/jwts/jwts.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/jwts/jwts.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-grpc/user/login/login_service_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/internal/dao/member.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/dao/member.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/internal/repo/member.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/repo/member.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/pkg/model/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/model/code.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +64,7 @@
     "Go Build.go build main.go.executor": "Run",
     "Go Build.go build test.com/project-project.executor": "Run",
     "Go Build.go build test.com/project-user.executor": "Debug",
+    "Go Test.TestGenStruct in test.com/project-common/code_gen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
@@ -90,10 +88,11 @@
       <recent name="C:\goCode\ms_project\project-api\api\user\user_grpc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goCode\ms_project\project-grpc\project" />
       <recent name="C:\goCode\ms_project\project-user\internal" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build test.com/project-user">
+  <component name="RunManager" selected="Go Test.TestGenStruct in test.com/project-common/code_gen">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ms_project" />
       <working_directory value="$PROJECT_DIR$/project-api" />
@@ -120,8 +119,21 @@
       <filePath value="$PROJECT_DIR$/project-user/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="TestGenStruct in test.com/project-common/code_gen" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ms_project" />
+      <working_directory value="$PROJECT_DIR$/project-common/code_gen" />
+      <root_directory value="$PROJECT_DIR$/project-common" />
+      <kind value="PACKAGE" />
+      <package value="test.com/project-common/code_gen" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGenStruct\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestGenStruct in test.com/project-common/code_gen" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build test.com/project-project" />
@@ -164,20 +176,10 @@
     <MESSAGE value="fix jwt" />
     <MESSAGE value="fix: 对id进行加密" />
     <MESSAGE value="add:添加 project-project模块以及/project/index接口的实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:添加 project-project模块以及/project/index接口的实现" />
+    <MESSAGE value="add:添加 验证用户是否登录功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:添加 验证用户是否登录功能" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go</url>
-          <line>156</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
