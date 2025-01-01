@@ -31,6 +31,7 @@ message LoginResponse{
   repeated OrganizationMessage organizationList = 2;
   TokenMessage tokenList = 3;
 }
+
 message MemberMessage {
   int64 id = 1;
   string name = 2;
@@ -67,9 +68,17 @@ message TokenMessage{
   int64 accessTokenExp = 4;
 }
 
+message UserMessage{
+  int64 memId = 1;
+}
+message OrgListResponse{
+  repeated OrganizationMessage organizationList = 1;
+}
+
 service LoginService {
   rpc GetCaptcha(CaptchaMessage) returns (CaptchaResponse) {}
   rpc Register(RegisterMessage) returns (RegisterResponse) {}
   rpc Login(LoginMessage) returns (LoginResponse) {}
   rpc TokenVerify(LoginMessage) returns (LoginResponse) {}
+  rpc MyOrgList(UserMessage) returns (OrgListResponse) {}
 }

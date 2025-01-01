@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加快捷生成数据库表对应的message和struct代码">
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/page.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加&quot;我的项目列表&quot;接口的实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/midd/midd.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/midd/midd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/user/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/user/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/rpc/user_rpc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/user/login/login_service_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/api/proto/login_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/pkg/service/login.service.v1/login_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +85,8 @@
       <recent name="C:\goCode\ms_project\project-api\api\user\user_grpc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goCode\ms_project\project-api\api\rpc" />
+      <recent name="C:\goCode\ms_project\project-grpc\user\login" />
       <recent name="C:\goCode\ms_project\project-grpc\project" />
       <recent name="C:\goCode\ms_project\project-user\internal" />
     </key>
@@ -126,9 +132,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build test.com/project-project" />
-        <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Test.TestGenStruct in test.com/project-common/code_gen" />
       </list>
     </recent_temporary>
@@ -171,7 +177,8 @@
     <MESSAGE value="add:添加 project-project模块以及/project/index接口的实现" />
     <MESSAGE value="add:添加 验证用户是否登录功能" />
     <MESSAGE value="add:添加快捷生成数据库表对应的message和struct代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:添加快捷生成数据库表对应的message和struct代码" />
+    <MESSAGE value="add:添加&quot;我的项目列表&quot;接口的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:添加&quot;我的项目列表&quot;接口的实现" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

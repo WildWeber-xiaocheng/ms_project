@@ -3,6 +3,8 @@ package user
 import (
 	"github.com/gin-gonic/gin"
 	"log"
+	"test.com/project-api/api/midd"
+	"test.com/project-api/api/rpc"
 	"test.com/project-api/router"
 )
 
@@ -17,9 +19,12 @@ func init() {
 }
 
 func (*RouterUser) Register(r *gin.Engine) {
-	InitRpcUserClient() //初始化grpc客户端连接
+	rpc.InitRpcUserClient() //初始化grpc客户端连接
 	user := New()
 	r.POST("/project/login/getCaptcha", user.GetCaptcha)
 	r.POST("/project/login/register", user.Register)
 	r.POST("/project/login", user.Login)
+	org := r.Group("/project/organization")
+	org.Use(midd.TokenVerify())
+	org.POST("/_getOrgList", user.myOrgList)
 }
