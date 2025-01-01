@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="fix: 修改login函数的逻辑">
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/menu/menu.go" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="fix: 修改index函数的逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/midd/midd.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/midd/midd.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/menu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/data/menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/menu/menu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/project.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/data/pro/pro.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/pro/pro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build test.com/project-project" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build test.com/project-project" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Test.TestGenStruct in test.com/project-common/code_gen" />
       </list>
@@ -180,7 +180,8 @@
     <MESSAGE value="add:添加&quot;我的组织列表&quot;接口的实现" />
     <MESSAGE value="fix: 添加和修改一些字段" />
     <MESSAGE value="fix: 修改login函数的逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 修改login函数的逻辑" />
+    <MESSAGE value="fix: 修改index函数的逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 修改index函数的逻辑" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

@@ -28,6 +28,7 @@ func TokenVerify() func(ctx *gin.Context) {
 			return
 		}
 		c.Set("memberId", response.Member.Id)
+		c.Set("memberName", response.Member.Name)
 		c.Next()
 	}
 }
