@@ -6,6 +6,7 @@ import (
 	"github.com/jinzhu/copier"
 	"net/http"
 	"test.com/project-api/pkg/model"
+	"test.com/project-api/pkg/model/menu"
 	"test.com/project-api/pkg/model/pro"
 	common "test.com/project-common"
 	"test.com/project-common/errs"
@@ -21,13 +22,14 @@ func (p HandlerProject) index(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
 	msg := &project.IndexMessage{}
-
 	indexResponse, err := ProjectServiceClient.Index(ctx, msg)
 	if err != nil {
 		code, msg := errs.ParseGrpcError(err)
 		c.JSON(http.StatusOK, result.Fail(code, msg))
 	}
-	c.JSON(http.StatusOK, result.Success(indexResponse.Menus))
+	var menus []*menu.Menu
+	copier.Copy(&menus, indexResponse.Menus)
+	c.JSON(http.StatusOK, result.Success(menus))
 }
 
 func (p HandlerProject) myProjectList(c *gin.Context) {
