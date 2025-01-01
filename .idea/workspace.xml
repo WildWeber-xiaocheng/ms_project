@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加 验证用户是否登录功能">
-      <change afterPath="$PROJECT_DIR$/project-common/code_gen/code_gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-common/code_gen/code_gen_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-common/code_gen/message.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-common/code_gen/struct.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/project.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/pro/pro.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/project.go" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加快捷生成数据库表对应的message和struct代码">
+      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/page.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +56,7 @@
     "DefaultGoTemplateProperty": "Go File",
     "Go Build.go build main.go.executor": "Run",
     "Go Build.go build test.com/project-project.executor": "Run",
-    "Go Build.go build test.com/project-user.executor": "Debug",
+    "Go Build.go build test.com/project-user.executor": "Run",
     "Go Test.TestGenStruct in test.com/project-common/code_gen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -92,7 +85,7 @@
       <recent name="C:\goCode\ms_project\project-user\internal" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestGenStruct in test.com/project-common/code_gen">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ms_project" />
       <working_directory value="$PROJECT_DIR$/project-api" />
@@ -133,10 +126,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestGenStruct in test.com/project-common/code_gen" />
-        <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build test.com/project-project" />
+        <item itemvalue="Go Build.go build test.com/project-user" />
+        <item itemvalue="Go Test.TestGenStruct in test.com/project-common/code_gen" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +170,8 @@
     <MESSAGE value="fix: 对id进行加密" />
     <MESSAGE value="add:添加 project-project模块以及/project/index接口的实现" />
     <MESSAGE value="add:添加 验证用户是否登录功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:添加 验证用户是否登录功能" />
+    <MESSAGE value="add:添加快捷生成数据库表对应的message和struct代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:添加快捷生成数据库表对应的message和struct代码" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
