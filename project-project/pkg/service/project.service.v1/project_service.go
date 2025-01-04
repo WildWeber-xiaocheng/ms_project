@@ -51,7 +51,22 @@ func (p *ProjectService) FindProjectByMemId(ctx context.Context, msg *project.Pr
 	id := msg.MemberId
 	page := msg.Page
 	pageSize := msg.PageSize
-	pms, total, err := p.projectRepo.FindProjectByMemId(ctx, id, page, pageSize)
+	var pms []*pro.ProjectAndMember
+	var total int64
+	var err error
+	if msg.SelectBy == "" || msg.SelectBy == "my" {
+		pms, total, err = p.projectRepo.FindProjectByMemId(ctx, id, "", page, pageSize)
+	}
+	if msg.SelectBy == "archive" { //归档
+		pms, total, err = p.projectRepo.FindProjectByMemId(ctx, id, "and archive = 1 ", page, pageSize)
+	}
+	if msg.SelectBy == "deleted" { //回收
+		pms, total, err = p.projectRepo.FindProjectByMemId(ctx, id, "and deleted = 1 ", page, pageSize)
+	}
+	if msg.SelectBy == "collect" { //收藏
+		pms, total, err = p.projectRepo.FindCollectProjectByMemId(ctx, id, page, pageSize)
+	}
+
 	if err != nil {
 		zap.L().Error("project FindProjectByMemId error", zap.Error(err))
 		return nil, errs.GrpcError(model.DBError)
