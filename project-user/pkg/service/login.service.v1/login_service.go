@@ -188,6 +188,9 @@ func (ls *LoginService) Login(ctx context.Context, msg *login.LoginMessage) (*lo
 		org.OwnerCode = memMsg.Code
 		org.CreateTime = tms.FormatByMill(organization.ToMap(orgs)[org.Id].CreateTime)
 	}
+	if len(orgs) > 0 { //对第一个组织进行加密
+		memMsg.OrganizationCode, _ = encrypts.EncryptInt64(orgs[0].Id, model.AESKey)
+	}
 	//3. 用jwt生成token
 	memIdStr := strconv.FormatInt(mem.Id, 10)
 	//尽管time.Second是int64，但是这里不能直接相乘
@@ -201,6 +204,7 @@ func (ls *LoginService) Login(ctx context.Context, msg *login.LoginMessage) (*lo
 		AccessTokenExp: token.AccessExp,
 		TokenType:      "bearer", //先固定为这个字段
 	}
+	//可以放入缓存 member orgs
 	return &login.LoginResponse{
 		Member:           memMsg,
 		OrganizationList: orgsMessage,
@@ -219,6 +223,7 @@ func (ls *LoginService) TokenVerify(ctx context.Context, msg *login.LoginMessage
 		return nil, errs.GrpcError(model.NoLogin)
 	}
 	//数据库查询
+	//这可以从缓存中查询，如果缓存没有，则查询失败
 	//后续优化：登录之后，应该把用户信息缓存起来
 	id, _ := strconv.ParseInt(parseToken, 10, 64)
 	memberById, err := ls.memberRepo.FindMemberById(context.Background(), id)
@@ -229,6 +234,16 @@ func (ls *LoginService) TokenVerify(ctx context.Context, msg *login.LoginMessage
 	memMsg := &login.MemberMessage{}
 	copier.Copy(memMsg, memberById)
 	memMsg.Code, _ = encrypts.EncryptInt64(memberById.Id, model.AESKey)
+
+	orgs, err := ls.organizationRepo.FindOrganizationByMemId(context.Background(), memberById.Id)
+	if err != nil {
+		zap.L().Error("TokenVerify FindOrganizationByMemId db fail", zap.Error(err))
+		return &login.LoginResponse{}, errs.GrpcError(model.DBError)
+	}
+	if len(orgs) > 0 { //对第一个组织进行加密
+		memMsg.OrganizationCode, _ = encrypts.EncryptInt64(orgs[0].Id, model.AESKey)
+	}
+
 	return &login.LoginResponse{
 		Member: memMsg,
 	}, nil
