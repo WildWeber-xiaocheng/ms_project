@@ -27,4 +27,5 @@ func (*RouterProject) Register(r *gin.Engine) {
 	group.POST("/project", h.myProjectList) //和'/selfList'共用一个处理函数
 	group.POST("/project_template", h.projectTemplate)
 	group.POST("/project/save", h.projectSave)
+	group.POST("/project/read", h.readProject)
 }

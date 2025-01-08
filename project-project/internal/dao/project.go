@@ -12,6 +12,26 @@ type ProjectDao struct {
 	conn *gorms.GormConn
 }
 
+func (p ProjectDao) FindProjectByPIdAndMemId(ctx context.Context, projectCode int64, memId int64) (*pro.ProjectAndMember, error) {
+	var pms *pro.ProjectAndMember
+	session := p.conn.Session(ctx)
+	//sql和视频不一样
+	sql := fmt.Sprintf("SELECT * FROM ms_project a, ms_project_member b " +
+		"WHERE a.id = b.project_code and b.member_code = ? and b.id = ? LIMIT 1")
+	raw := session.Raw(sql, memId, projectCode)
+	err := raw.Scan(&pms).Error
+	return pms, err
+}
+
+func (p ProjectDao) FindCollectByPidAndMemId(ctx context.Context, projectCode int64, memId int64) (bool, error) {
+	var count int64
+	session := p.conn.Session(ctx)
+	sql := fmt.Sprintf("select  count(*) from ms_project_collection where member_code=? and project_code = ?")
+	raw := session.Raw(sql, memId, projectCode)
+	err := raw.Scan(&count).Error
+	return count > 0, err
+}
+
 func (p ProjectDao) SaveProject(ctx context.Context, conn database.DbConn, pr *pro.Project) error {
 	p.conn = conn.(*gorms.GormConn)
 	return p.conn.Tx(ctx).Save(&pr).Error

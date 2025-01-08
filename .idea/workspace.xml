@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: 添加“项目模版”功能">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: 添加“创建项目”功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" afterDir="false" />
@@ -62,7 +65,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultGoTemplateProperty": "Go File",
     "Go Build.go build main.go.executor": "Run",
-    "Go Build.go build test.com/project-project.executor": "Run",
+    "Go Build.go build test.com/project-project.executor": "Debug",
     "Go Build.go build test.com/project-user.executor": "Run",
     "Go Test.TestGenStruct in test.com/project-common/code_gen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -94,7 +97,7 @@
       <recent name="C:\goCode\ms_project\project-user\internal" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build test.com/project-project">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ms_project" />
       <working_directory value="$PROJECT_DIR$/project-api" />
@@ -135,8 +138,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
+        <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestGenStruct in test.com/project-common/code_gen" />
       </list>
@@ -188,7 +191,8 @@
     <MESSAGE value="fix: 修改“我的项目列表”的逻辑" />
     <MESSAGE value="fix: 修改“我的项目列表”的逻辑，添加收藏、已归档、回收站功能" />
     <MESSAGE value="add: 添加“项目模版”功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: 添加“项目模版”功能" />
+    <MESSAGE value="add: 添加“创建项目”功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: 添加“创建项目”功能" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

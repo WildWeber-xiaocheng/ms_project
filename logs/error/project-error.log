@@ -12,3 +12,9 @@
 {"level":"ERROR","time":"2024-12-27T23:24:21.048+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2024-12-30T22:17:15.284+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2024-12-30T22:17:44.192+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"etcdserver: requested lease not found"}
+{"level":"ERROR","time":"2025-01-08T23:41:52.224+0800","caller":"login.service.v1/login_service.go:222","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-08T23:42:03.410+0800","caller":"login.service.v1/login_service.go:222","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-08T23:42:03.410+0800","caller":"login.service.v1/login_service.go:222","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-08T23:42:35.626+0800","caller":"login.service.v1/login_service.go:222","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-08T23:52:46.799+0800","caller":"project.service.v1/project_service.go:209","msg":"project FindProjectDetail FindProjectByPIdAndMemId error","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-08T23:52:46.810+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"etcdserver: requested lease not found"}
