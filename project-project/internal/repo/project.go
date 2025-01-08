@@ -3,11 +3,14 @@ package repo
 import (
 	"context"
 	"test.com/project-project/internal/data/pro"
+	"test.com/project-project/internal/database"
 )
 
 type ProjectRepo interface {
 	FindProjectByMemId(ctx context.Context, memId int64, condition string, page int64, size int64) ([]*pro.ProjectAndMember, int64, error)
 	FindCollectProjectByMemId(ctx context.Context, memId int64, page int64, size int64) ([]*pro.ProjectAndMember, int64, error)
+	SaveProject(ctx context.Context, conn database.DbConn, pr *pro.Project) error
+	SaveProjectMember(ctx context.Context, conn database.DbConn, pm *pro.ProjectMember) error
 }
 
 type ProjectTemplateRepo interface {

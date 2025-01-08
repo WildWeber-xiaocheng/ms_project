@@ -24,6 +24,7 @@ func (*RouterProject) Register(r *gin.Engine) {
 	group.Use(midd.TokenVerify())
 	group.POST("/index", h.index)
 	group.POST("/project/selfList", h.myProjectList)
-	group.POST("/project", h.myProjectList)
-	group.POST("/project_template", h.projectTemplate) //和'/selfList'共用一个处理函数
+	group.POST("/project", h.myProjectList) //和'/selfList'共用一个处理函数
+	group.POST("/project_template", h.projectTemplate)
+	group.POST("/project/save", h.projectSave)
 }
