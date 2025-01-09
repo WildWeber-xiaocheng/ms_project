@@ -109,6 +109,8 @@ message ProjectRpcMessage{
   string description = 10;
   int64 id = 11;
   string projectCode = 12;
+  bool deleted = 13;
+  string collectType = 14;
 }
 
 message ProjectTemplateMessage{
@@ -150,10 +152,20 @@ message MyProjectResponse{
   int64 total = 2;
 }
 
+message DeletedProjectResponse{
+
+}
+
+message CollectProjectResponse{
+
+}
+
 service ProjectService {
   rpc Index(IndexMessage) returns (IndexResponse) {}
   rpc FindProjectByMemId(ProjectRpcMessage) returns (MyProjectResponse){}
   rpc FindProjectTemplate(ProjectRpcMessage) returns (ProjectTemplateResponse){}
   rpc SaveProject(ProjectRpcMessage) returns (SaveProjectMessage){}
   rpc FindProjectDetail(ProjectRpcMessage) returns (ProjectDetailMessage){}
+  rpc UpdateDeletedProject(ProjectRpcMessage) returns (DeletedProjectResponse){}
+  rpc UpdateCollectProject(ProjectRpcMessage) returns (CollectProjectResponse){}
 }

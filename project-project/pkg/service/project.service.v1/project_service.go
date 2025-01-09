@@ -65,7 +65,7 @@ func (p *ProjectService) FindProjectByMemId(ctx context.Context, msg *project.Pr
 	var total int64
 	var err error
 	if msg.SelectBy == "" || msg.SelectBy == "my" {
-		pms, total, err = p.projectRepo.FindProjectByMemId(ctx, id, "", page, pageSize)
+		pms, total, err = p.projectRepo.FindProjectByMemId(ctx, id, "and deleted = 0", page, pageSize)
 	}
 	if msg.SelectBy == "archive" { //归档
 		pms, total, err = p.projectRepo.FindProjectByMemId(ctx, id, "and archive = 1 ", page, pageSize)
@@ -75,6 +75,24 @@ func (p *ProjectService) FindProjectByMemId(ctx context.Context, msg *project.Pr
 	}
 	if msg.SelectBy == "collect" { //收藏
 		pms, total, err = p.projectRepo.FindCollectProjectByMemId(ctx, id, page, pageSize)
+		for _, v := range pms {
+			v.Collected = model.Collected
+		}
+	} else {
+		collectPms, _, err := p.projectRepo.FindCollectProjectByMemId(ctx, id, page, pageSize)
+		if err != nil {
+			zap.L().Error("project FindProjectByMemId FindCollectProjectByMemId error", zap.Error(err))
+			return nil, errs.GrpcError(model.DBError)
+		}
+		var cMap = make(map[int64]*pro.ProjectAndMember)
+		for _, v := range collectPms {
+			cMap[v.Id] = v
+		}
+		for _, v := range pms {
+			if cMap[v.ProjectCode] != nil {
+				v.Collected = model.Collected
+			}
+		}
 	}
 
 	if err != nil {
@@ -87,7 +105,7 @@ func (p *ProjectService) FindProjectByMemId(ctx context.Context, msg *project.Pr
 	var pmm []*project.ProjectMessage
 	copier.Copy(&pmm, pms)
 	for _, v := range pmm {
-		v.Code, _ = encrypts.EncryptInt64(v.Id, model.AESKey)
+		v.Code, _ = encrypts.EncryptInt64(v.ProjectCode, model.AESKey)
 		pam := pro.ToMap(pms)[v.Id]
 		v.AccessControlType = pam.GetAccessControlType()
 		v.OrganizationCode, _ = encrypts.EncryptInt64(pam.OrganizationCode, model.AESKey)
@@ -239,4 +257,17 @@ func (ps *ProjectService) FindProjectDetail(ctx context.Context, msg *project.Pr
 	detailMsg.CreateTime = tms.FormatByMill(projectAndMember.CreateTime)
 	return detailMsg, nil
 
+}
+
+func (ps *ProjectService) UpdateDeletedProject(ctx context.Context, msg *project.ProjectRpcMessage) (*project.DeletedProjectResponse, error) {
+	projectCodeStr, _ := encrypts.Decrypt(msg.ProjectCode, model.AESKey)
+	projectCode, _ := strconv.ParseInt(projectCodeStr, 10, 64)
+	c, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	err := ps.projectRepo.UpdateDeletedProject(c, projectCode, msg.Deleted)
+	if err != nil {
+		zap.L().Error("project RecycleProject DeleteProject error", zap.Error(err))
+		return nil, errs.GrpcError(model.DBError)
+	}
+	return &project.DeletedProjectResponse{}, nil
 }
