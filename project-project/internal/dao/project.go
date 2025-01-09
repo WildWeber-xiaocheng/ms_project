@@ -12,12 +12,31 @@ type ProjectDao struct {
 	conn *gorms.GormConn
 }
 
+func (p ProjectDao) DeleteProjectCollect(ctx context.Context, memId int64, projectCode int64) error {
+	return p.conn.Session(ctx).Where("member_code=? and project_code=?", memId, projectCode).Delete(&pro.ProjectCollection{}).Error
+}
+
+func (p ProjectDao) SaveProjectCollect(ctx context.Context, pc *pro.ProjectCollection) error {
+	return p.conn.Session(ctx).Save(&pc).Error
+}
+
+func (p ProjectDao) UpdateDeletedProject(ctx context.Context, id int64, deleted bool) error {
+	session := p.conn.Session(ctx)
+	var err error
+	if deleted {
+		err = session.Model(&pro.Project{}).Where("id=?", id).Update("deleted", 1).Error
+	} else {
+		err = session.Model(&pro.Project{}).Where("id=?", id).Update("deleted", 0).Error
+	}
+	return err
+}
+
 func (p ProjectDao) FindProjectByPIdAndMemId(ctx context.Context, projectCode int64, memId int64) (*pro.ProjectAndMember, error) {
 	var pms *pro.ProjectAndMember
 	session := p.conn.Session(ctx)
 	//sql和视频不一样
 	sql := fmt.Sprintf("SELECT * FROM ms_project a, ms_project_member b " +
-		"WHERE a.id = b.project_code and b.member_code = ? and b.id = ? LIMIT 1")
+		"WHERE a.id = b.project_code and b.member_code = ? and b.project_code = ? LIMIT 1")
 	raw := session.Raw(sql, memId, projectCode)
 	err := raw.Scan(&pms).Error
 	return pms, err
