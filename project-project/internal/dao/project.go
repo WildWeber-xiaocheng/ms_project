@@ -12,6 +12,10 @@ type ProjectDao struct {
 	conn *gorms.GormConn
 }
 
+func (p ProjectDao) UpdateProject(ctx context.Context, proj *pro.Project) error {
+	return p.conn.Session(ctx).Updates(&proj).Error
+}
+
 func (p ProjectDao) DeleteProjectCollect(ctx context.Context, memId int64, projectCode int64) error {
 	return p.conn.Session(ctx).Where("member_code=? and project_code=?", memId, projectCode).Delete(&pro.ProjectCollection{}).Error
 }
@@ -35,7 +39,7 @@ func (p ProjectDao) FindProjectByPIdAndMemId(ctx context.Context, projectCode in
 	var pms *pro.ProjectAndMember
 	session := p.conn.Session(ctx)
 	//sql和视频不一样
-	sql := fmt.Sprintf("SELECT * FROM ms_project a, ms_project_member b " +
+	sql := fmt.Sprintf("SELECT a.*, b.member_code, b.project_code, b.join_time, b.is_owner, b.authorize FROM ms_project a, ms_project_member b " +
 		"WHERE a.id = b.project_code and b.member_code = ? and b.project_code = ? LIMIT 1")
 	raw := session.Raw(sql, memId, projectCode)
 	err := raw.Scan(&pms).Error

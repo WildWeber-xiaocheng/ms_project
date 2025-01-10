@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: 添加“读取项目”的补充功能">
-      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_collect.go" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: 添加“收藏项目”和“回收站”的功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/pro/pro.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service_grpc.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" afterDir="false" />
@@ -139,9 +139,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go (1)" />
-        <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (2)" />
+        <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
       </list>
@@ -196,7 +196,9 @@
     <MESSAGE value="add: 添加“创建项目”功能" />
     <MESSAGE value="add: 添加“读取项目”的基础功能" />
     <MESSAGE value="add: 添加“读取项目”的补充功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: 添加“读取项目”的补充功能" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="add: 添加“收藏项目”和“回收站”的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: 添加“收藏项目”和“回收站”的功能" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
