@@ -2,6 +2,7 @@ package login_service_v1
 
 import (
 	"context"
+	"encoding/json"
 	"github.com/jinzhu/copier"
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
@@ -204,7 +205,13 @@ func (ls *LoginService) Login(ctx context.Context, msg *login.LoginMessage) (*lo
 		AccessTokenExp: token.AccessExp,
 		TokenType:      "bearer", //先固定为这个字段
 	}
-	//可以放入缓存 member orgs
+	//放入缓存
+	go func() {
+		memJson, _ := json.Marshal(mem)
+		ls.cache.Put(c, model.Member+"::"+memIdStr, string(memJson), exp)
+		orgsJson, _ := json.Marshal(orgs)
+		ls.cache.Put(c, model.MemberOrganization+"::"+memIdStr, string(orgsJson), exp)
+	}()
 	return &login.LoginResponse{
 		Member:           memMsg,
 		OrganizationList: orgsMessage,
@@ -223,23 +230,43 @@ func (ls *LoginService) TokenVerify(ctx context.Context, msg *login.LoginMessage
 		return nil, errs.GrpcError(model.NoLogin)
 	}
 	//数据库查询
-	//这可以从缓存中查询，如果缓存没有，则查询失败
-	//后续优化：登录之后，应该把用户信息缓存起来
-	id, _ := strconv.ParseInt(parseToken, 10, 64)
-	memberById, err := ls.memberRepo.FindMemberById(context.Background(), id)
+	//从缓存中查询，如果缓存没有，则查询失败
+	memberJson, err := ls.cache.Get(context.Background(), model.Member+"::"+parseToken)
 	if err != nil {
-		zap.L().Error("TokenVerify db FindMemberById error", zap.Error(err))
-		return nil, errs.GrpcError(model.DBError)
+		zap.L().Error("TokenVerify redis cache Get member error", zap.Error(err))
+		return nil, errs.GrpcError(model.NoLogin)
 	}
+	if memberJson == "" {
+		zap.L().Error("Login TokenVerify cache already expire")
+		return nil, errs.GrpcError(model.NoLogin)
+	}
+	memberById := &member.Member{}
+	json.Unmarshal([]byte(memberJson), memberById)
+	//后续优化：登录之后，应该把用户信息缓存起来
+	//id, _ := strconv.ParseInt(parseToken, 10, 64)
+	//memberById, err := ls.memberRepo.FindMemberById(context.Background(), id)
+
 	memMsg := &login.MemberMessage{}
 	copier.Copy(memMsg, memberById)
 	memMsg.Code, _ = encrypts.EncryptInt64(memberById.Id, model.AESKey)
 
-	orgs, err := ls.organizationRepo.FindOrganizationByMemId(context.Background(), memberById.Id)
+	orgsJson, err := ls.cache.Get(context.Background(), model.MemberOrganization+"::"+parseToken)
 	if err != nil {
-		zap.L().Error("TokenVerify FindOrganizationByMemId db fail", zap.Error(err))
-		return &login.LoginResponse{}, errs.GrpcError(model.DBError)
+		zap.L().Error("TokenVerify redis Get MemberOrganization error", zap.Error(err))
+		return nil, errs.GrpcError(model.NoLogin)
 	}
+	if orgsJson == "" {
+		zap.L().Error("Login TokenVerify Organization cache already expire")
+		return nil, errs.GrpcError(model.NoLogin)
+	}
+	var orgs []*organization.Organization
+	json.Unmarshal([]byte(orgsJson), &orgs)
+
+	//orgs, err := ls.organizationRepo.FindOrganizationByMemId(context.Background(), memberById.Id)
+	//if err != nil {
+	//	zap.L().Error("TokenVerify FindOrganizationByMemId db fail", zap.Error(err))
+	//	return &login.LoginResponse{}, errs.GrpcError(model.DBError)
+	//}
 	if len(orgs) > 0 { //对第一个组织进行加密
 		memMsg.OrganizationCode, _ = encrypts.EncryptInt64(orgs[0].Id, model.AESKey)
 	}
