@@ -10,6 +10,7 @@ import (
 	"test.com/project-common/logs"
 	"test.com/project-grpc/user/login"
 	"test.com/project-user/config"
+	"test.com/project-user/internal/interceptor"
 	loginServiceV1 "test.com/project-user/pkg/service/login.service.v1"
 )
 
@@ -54,7 +55,17 @@ func RegisterGrpc() *grpc.Server {
 		RegisterFunc: func(g *grpc.Server) {
 			login.RegisterLoginServiceServer(g, loginServiceV1.New())
 		}}
-	s := grpc.NewServer()
+	//in := grpc.UnaryInterceptor(func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (resp interface{}, err error) {
+	//	if info.FullMethod != "/login.service.v1.LoginService/MyOrgList" {
+	//		return handler(ctx, req)
+	//	}
+	//	fmt.Println("请求之前")
+	//	rsp, err := handler(ctx, req)
+	//	fmt.Println("请求之后")
+	//	return rsp, err
+	//})
+	cacheInterceptor := interceptor.New()
+	s := grpc.NewServer(cacheInterceptor.Cache())
 	c.RegisterFunc(s)
 	lis, err := net.Listen("tcp", c.Addr)
 	if err != nil {
