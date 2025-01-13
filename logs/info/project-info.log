@@ -86,3 +86,10 @@
 {"level":"ERROR","time":"2025-01-13T22:26:14.112+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-01-13T22:26:14.130+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-01-13T22:26:14.130+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"INFO","time":"2025-01-14T00:03:43.300+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"ERROR","time":"2025-01-14T00:04:13.334+0800","caller":"project.service.v1/project_service.go:173","msg":"project SaveProject taskStagesTemplateRepo.FindByProjectTemplatedId error","error":"sql: Scan called without calling Next"}
+{"level":"INFO","time":"2025-01-14T00:19:10.456+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-01-14T00:19:10.473+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-14T00:19:20.140+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-14T00:19:23.159+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-14T00:19:24.118+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}

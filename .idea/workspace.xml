@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: 为project模块的部分接口添加缓存">
-      <change afterPath="$PROJECT_DIR$/project-api/api/project/task.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/tasks/task_stages.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;任务-任务看板&quot;功能api部分">
+      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/task_stages.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/data/task/task_stages.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/rpc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/task_stages_template.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/task_stages_template.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +174,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;project-user/internal/database/conn.go&#10;#&#9;project-user/pkg/service/login.service.v1/login_service.go" />
     <MESSAGE value="add register" />
     <MESSAGE value="add login logic" />
     <MESSAGE value="add login logic about jwt" />
@@ -199,7 +198,8 @@
     <MESSAGE value="add: 为user模块的部分接口添加缓存" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="add: 为project模块的部分接口添加缓存" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: 为project模块的部分接口添加缓存" />
+    <MESSAGE value="add: &quot;任务-任务看板&quot;功能api部分" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;任务-任务看板&quot;功能api部分" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

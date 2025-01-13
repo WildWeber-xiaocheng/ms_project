@@ -59,3 +59,4 @@
 {"level":"ERROR","time":"2025-01-13T22:26:14.112+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-01-13T22:26:14.130+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-01-13T22:26:14.130+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-14T00:04:13.334+0800","caller":"project.service.v1/project_service.go:173","msg":"project SaveProject taskStagesTemplateRepo.FindByProjectTemplatedId error","error":"sql: Scan called without calling Next"}

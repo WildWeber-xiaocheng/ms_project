@@ -30,6 +30,7 @@ type ProjectService struct {
 	projectRepo            repo.ProjectRepo
 	projectTemplateRepo    repo.ProjectTemplateRepo
 	taskStagesTemplateRepo repo.TaskStagesTemplateRepo
+	taskStagesRepo         repo.TaskStagesRepo
 }
 
 func New() *ProjectService {
@@ -40,6 +41,7 @@ func New() *ProjectService {
 		projectRepo:            dao.NewProjectDao(),
 		projectTemplateRepo:    dao.NewProjectTemplateDao(),
 		taskStagesTemplateRepo: dao.NewTaskStagesTemplateDao(),
+		taskStagesRepo:         dao.NewTaskStagesDao(),
 	}
 }
 
@@ -158,11 +160,19 @@ func (ps *ProjectService) FindProjectTemplate(ctx context.Context, msg *project.
 	}, nil
 }
 
-func (ps *ProjectService) SaveProject(ctx context.Context, msg *project.ProjectRpcMessage) (*project.SaveProjectMessage, error) {
+func (ps *ProjectService) SaveProject(ctxs context.Context, msg *project.ProjectRpcMessage) (*project.SaveProjectMessage, error) {
 	organizationCodeStr, _ := encrypts.Decrypt(msg.OrganizationCode, model.AESKey)
 	organizationCode, _ := strconv.ParseInt(organizationCodeStr, 10, 64)
 	templateCodeStr, _ := encrypts.Decrypt(msg.TemplateCode, model.AESKey)
 	templateCode, _ := strconv.ParseInt(templateCodeStr, 10, 64)
+	//获取模版信息
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*2)
+	defer cancel()
+	stageTemplateList, err := ps.taskStagesTemplateRepo.FindByProjectTemplatedId(ctx, int(templateCode))
+	if err != nil {
+		zap.L().Error("project SaveProject taskStagesTemplateRepo.FindByProjectTemplatedId error", zap.Error(err))
+		return nil, errs.GrpcError(err.(*errs.BError))
+	}
 	//1. 保存项目表
 	pr := &pro.Project{
 		Name:              msg.Name,
@@ -177,7 +187,7 @@ func (ps *ProjectService) SaveProject(ctx context.Context, msg *project.ProjectR
 		TaskBoardTheme:    model.Simple,
 	}
 	var rsp *project.SaveProjectMessage
-	err := ps.transaction.Action(func(conn database.DbConn) error {
+	err = ps.transaction.Action(func(conn database.DbConn) error {
 		err := ps.projectRepo.SaveProject(ctx, conn, pr)
 		if err != nil {
 			zap.L().Error("project SaveProject SaveProject error", zap.Error(err))
@@ -195,6 +205,22 @@ func (ps *ProjectService) SaveProject(ctx context.Context, msg *project.ProjectR
 		if err != nil {
 			zap.L().Error("project SaveProject SaveProjectMember error", zap.Error(err))
 			return errs.GrpcError(err.(*errs.BError))
+		}
+		//3. 生成任务
+		for index, v := range stageTemplateList {
+			stages := &task.TaskStages{
+				Name:        v.Name,
+				Description: "",
+				Sort:        index,
+				CreateTime:  time.Now().UnixMilli(),
+				ProjectCode: pr.Id,
+				Deleted:     model.NoDeleted,
+			}
+			err = ps.taskStagesRepo.SaveTaskStages(ctx, conn, stages)
+			if err != nil {
+				zap.L().Error("project SaveProject taskStagesRepo.SaveTaskStages error", zap.Error(err))
+				return errs.GrpcError(model.DBError)
+			}
 		}
 		return nil
 	})
