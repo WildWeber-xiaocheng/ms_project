@@ -79,3 +79,10 @@
 {"level":"INFO","time":"2025-01-13T21:58:26.854+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
 {"level":"INFO","time":"2025-01-13T21:58:39.757+0800","caller":"interceptor/cache.go:42","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
 {"level":"INFO","time":"2025-01-13T21:58:39.761+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-13T22:00:23.283+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-13T22:00:23.285+0800","caller":"interceptor/cache.go:42","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-13T22:00:23.296+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"ERROR","time":"2025-01-13T22:26:14.108+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-13T22:26:14.112+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-13T22:26:14.130+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-13T22:26:14.130+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
