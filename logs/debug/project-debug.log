@@ -75,3 +75,7 @@
 {"level":"INFO","time":"2025-01-13T21:43:58.027+0800","caller":"interceptor/cache.go:42","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
 {"level":"INFO","time":"2025-01-13T21:45:07.749+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
 {"level":"INFO","time":"2025-01-13T21:45:16.091+0800","caller":"interceptor/cache.go:42","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-13T21:58:26.833+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-01-13T21:58:26.854+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-13T21:58:39.757+0800","caller":"interceptor/cache.go:42","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
+{"level":"INFO","time":"2025-01-13T21:58:39.761+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
