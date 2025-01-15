@@ -93,3 +93,15 @@
 {"level":"INFO","time":"2025-01-14T00:19:20.140+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
 {"level":"INFO","time":"2025-01-14T00:19:23.159+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
 {"level":"INFO","time":"2025-01-14T00:19:24.118+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-15T23:04:59.393+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-15T23:04:59.399+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-15T23:04:59.404+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:17.856+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:20.212+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:20.217+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:20.222+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:27.066+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:29.334+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:37.317+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:37.323+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-15T23:05:37.326+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}

@@ -11,9 +11,9 @@ import (
 	"test.com/project-grpc/project"
 	"test.com/project-grpc/user/login"
 	"test.com/project-project/internal/dao"
+	"test.com/project-project/internal/data"
 	"test.com/project-project/internal/data/menu"
 	"test.com/project-project/internal/data/pro"
-	"test.com/project-project/internal/data/task"
 	"test.com/project-project/internal/database"
 	"test.com/project-project/internal/database/tran"
 	"test.com/project-project/internal/repo"
@@ -149,7 +149,7 @@ func (ps *ProjectService) FindProjectTemplate(ctx context.Context, msg *project.
 	}
 	var ptas []*pro.ProjectTemplateAll
 	for _, v := range pts {
-		ptas = append(ptas, v.Convert(task.CovertProjectMap(tsts)[v.Id]))
+		ptas = append(ptas, v.Convert(data.CovertProjectMap(tsts)[v.Id]))
 	}
 	//3. 组装数据
 	var pmMsgs []*project.ProjectTemplateMessage
@@ -208,7 +208,7 @@ func (ps *ProjectService) SaveProject(ctxs context.Context, msg *project.Project
 		}
 		//3. 生成任务
 		for index, v := range stageTemplateList {
-			stages := &task.TaskStages{
+			stages := &data.TaskStages{
 				Name:        v.Name,
 				Description: "",
 				Sort:        index,
