@@ -14,7 +14,7 @@ type TaskStagesDao struct {
 func (t TaskStagesDao) FindStagesByProjectId(ctx context.Context, projectCode int64, page int64, pageSize int64) (list []*data.TaskStages, total int64, err error) {
 	session := t.conn.Session(ctx)
 	err = session.Model(&data.TaskStages{}).
-		Where("project_code=? and deleted=?", projectCode, 0).
+		Where("project_code=?", projectCode).
 		Order("sort asc").
 		Limit(int(pageSize)).
 		Offset(int((page - 1) * pageSize)).

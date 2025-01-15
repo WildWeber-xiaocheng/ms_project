@@ -4,12 +4,15 @@ import (
 	"context"
 	"github.com/jinzhu/copier"
 	"go.uber.org/zap"
+	"test.com/project-api/api/rpc"
 	"test.com/project-common/encrypts"
 	"test.com/project-common/errs"
 	"test.com/project-common/tms"
 	"test.com/project-grpc/task"
+	"test.com/project-grpc/user/login"
 	"test.com/project-project/internal/dao"
 	"test.com/project-project/internal/data"
+	"test.com/project-project/internal/data/pro"
 	"test.com/project-project/internal/database/tran"
 	"test.com/project-project/internal/repo"
 	"test.com/project-project/pkg/model"
@@ -65,6 +68,60 @@ func (t *TaskService) TaskStages(co context.Context, msg *task.TaskReqMessage) (
 	}
 	return &task.TaskStagesResponse{
 		List:  tsMessages,
+		Total: total,
+	}, nil
+}
+
+func (t *TaskService) MemberProjectList(co context.Context, msg *task.TaskReqMessage) (*task.MemberProjectResponse, error) {
+	projectCode := encrypts.DecryptNoErr(msg.ProjectCode)
+	//projectCodeStr, _ := encrypts.Decrypt(msg.ProjectCode, model.AESKey)
+	//projectCode, _ := strconv.ParseInt(projectCodeStr, 10, 64)
+	page := msg.Page
+	pageSize := msg.PageSize
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	//1. 去project_member表 查询用户id列表
+	memberInfos, total, err := t.projectRepo.FindProjectMemberByPid(ctx, projectCode, page, pageSize)
+	if err != nil {
+		zap.L().Error("project task MemberProjectList FindProjectMemberByPid error", zap.Error(err))
+		return nil, errs.GrpcError(model.DBError)
+	}
+	if memberInfos == nil || len(memberInfos) <= 0 {
+		return &task.MemberProjectResponse{List: nil, Total: 0}, nil
+	}
+	//2. 用用户id列表去请求用户信息
+	var mIds []int64
+	pmMap := make(map[int64]*pro.ProjectMember)
+	for _, v := range memberInfos {
+		mIds = append(mIds, v.MemberCode)
+		pmMap[v.MemberCode] = v
+	}
+	userMsg := &login.UserMessage{
+		MIds: mIds,
+	}
+	//调用user服务来获取用户信息
+	memberMessageList, err := rpc.LoginServiceClient.FindMemInfoByIds(ctx, userMsg)
+	if err != nil {
+		zap.L().Error("project task MemberProjectList FindMemInfoByIds error", zap.Error(err))
+		return nil, err
+	}
+	var list []*task.MemberProjectMessage
+	for _, v := range memberMessageList.List {
+		owner := pmMap[v.Id].IsOwner
+		mpm := &task.MemberProjectMessage{
+			MemberCode: v.Id,
+			Name:       v.Name,
+			Avatar:     v.Avatar,
+			Email:      v.Email,
+			Code:       v.Code,
+		}
+		if v.Id == owner {
+			mpm.IsOwner = model.Owner
+		}
+		list = append(list, mpm)
+	}
+	return &task.MemberProjectResponse{
+		List:  list,
 		Total: total,
 	}, nil
 }

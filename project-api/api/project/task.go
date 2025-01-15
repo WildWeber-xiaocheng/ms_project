@@ -6,6 +6,7 @@ import (
 	"github.com/jinzhu/copier"
 	"net/http"
 	"test.com/project-api/pkg/model"
+	"test.com/project-api/pkg/model/pro"
 	"test.com/project-api/pkg/model/tasks"
 	common "test.com/project-common"
 	"test.com/project-common/errs"
@@ -54,6 +55,37 @@ func (t *HandlerTask) taskStages(c *gin.Context) {
 	c.JSON(http.StatusOK, result.Success(gin.H{
 		"list":  resp,
 		"total": stages.Total,
+		"page":  page.Page,
+	}))
+}
+
+func (t *HandlerTask) memberProjectList(c *gin.Context) {
+	result := &common.Result{}
+	projectCode := c.PostForm("projectCode")
+	page := &model.Page{}
+	page.Bind(c)
+
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	msg := &task.TaskReqMessage{
+		ProjectCode: projectCode,
+		Page:        page.Page,
+		PageSize:    page.PageSize,
+	}
+
+	memberResp, err := TaskServiceClient.MemberProjectList(ctx, msg)
+	if err != nil {
+		code, msg := errs.ParseGrpcError(err)
+		c.JSON(http.StatusOK, result.Fail(code, msg))
+	}
+	var resp []*pro.MemberProjectResp
+	copier.Copy(&resp, memberResp.List)
+	if resp == nil {
+		resp = []*pro.MemberProjectResp{}
+	}
+	c.JSON(http.StatusOK, result.Success(gin.H{
+		"list":  resp,
+		"total": memberResp.Total,
 		"page":  page.Page,
 	}))
 }

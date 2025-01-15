@@ -12,6 +12,20 @@ type ProjectDao struct {
 	conn *gorms.GormConn
 }
 
+func (p ProjectDao) FindProjectMemberByPid(ctx context.Context, projectCode int64, page int64, pageSize int64) (list []*pro.ProjectMember, total int64, err error) {
+	session := p.conn.Session(ctx)
+	//和视频47 写的不一样，视频没有order limit offset
+	err = session.Model(&pro.ProjectMember{}).
+		Where("project_code=?", projectCode).
+		Order("member_code asc").
+		Limit(int(pageSize)).
+		Offset(int((page - 1) * pageSize)).
+		Find(&list).
+		Error
+	err = session.Model(&pro.ProjectMember{}).Where("project_code=?", projectCode).Count(&total).Error
+	return
+}
+
 func (p ProjectDao) UpdateProject(ctx context.Context, proj *pro.Project) error {
 	return p.conn.Session(ctx).Updates(&proj).Error
 }

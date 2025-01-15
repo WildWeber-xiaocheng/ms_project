@@ -105,3 +105,21 @@
 {"level":"INFO","time":"2025-01-15T23:05:37.317+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
 {"level":"INFO","time":"2025-01-15T23:05:37.323+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
 {"level":"INFO","time":"2025-01-15T23:05:37.326+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-16T00:26:16.334+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-01-16T00:26:16.343+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-16T00:26:16.368+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-16T00:27:23.926+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
+{"level":"INFO","time":"2025-01-16T00:27:23.956+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-16T00:27:28.662+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-16T00:32:22.071+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-01-16T00:32:22.083+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-16T00:32:22.088+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-16T00:35:14.281+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
+{"level":"ERROR","time":"2025-01-16T00:35:40.708+0800","caller":"task.service.v1/task_service.go:86","msg":"project task MemberProjectList FindProjectMemberByPid error","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-16T00:35:40.708+0800","caller":"project.service.v1/project_service.go:255","msg":"project FindProjectDetail FindProjectByPIdAndMemId error","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-16T00:35:40.712+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-16T00:35:40.714+0800","caller":"task.service.v1/task_service.go:54","msg":"project task TaskStages FindByProjectCode error","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-16T00:35:40.714+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-16T00:35:40.715+0800","caller":"project.service.v1/project_service.go:255","msg":"project FindProjectDetail FindProjectByPIdAndMemId error","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-16T00:38:44.071+0800","caller":"project.service.v1/project_service.go:86","msg":"project FindProjectByMemId FindCollectProjectByMemId error","error":"context canceled"}
+{"level":"INFO","time":"2025-01-16T00:38:44.073+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
