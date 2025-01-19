@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/jinzhu/copier"
 	"go.uber.org/zap"
-	"test.com/project-api/api/rpc"
 	"test.com/project-common/encrypts"
 	"test.com/project-common/errs"
 	"test.com/project-common/tms"
@@ -15,6 +14,7 @@ import (
 	"test.com/project-project/internal/data/pro"
 	"test.com/project-project/internal/database/tran"
 	"test.com/project-project/internal/repo"
+	"test.com/project-project/internal/rpc"
 	"test.com/project-project/pkg/model"
 	"time"
 )
@@ -27,6 +27,7 @@ type TaskService struct {
 	projectTemplateRepo    repo.ProjectTemplateRepo
 	taskStagesTemplateRepo repo.TaskStagesTemplateRepo
 	taskStagesRepo         repo.TaskStagesRepo
+	taskRepo               repo.TaskRepo
 }
 
 func New() *TaskService {
@@ -37,6 +38,7 @@ func New() *TaskService {
 		projectTemplateRepo:    dao.NewProjectTemplateDao(),
 		taskStagesTemplateRepo: dao.NewTaskStagesTemplateDao(),
 		taskStagesRepo:         dao.NewTaskStagesDao(),
+		taskRepo:               dao.NewTaskDao(),
 	}
 }
 
@@ -78,7 +80,7 @@ func (t *TaskService) MemberProjectList(co context.Context, msg *task.TaskReqMes
 	//projectCode, _ := strconv.ParseInt(projectCodeStr, 10, 64)
 	page := msg.Page
 	pageSize := msg.PageSize
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 200*time.Second)
 	defer cancel()
 	//1. 去project_member表 查询用户id列表
 	memberInfos, total, err := t.projectRepo.FindProjectMemberByPid(ctx, projectCode, page, pageSize)
@@ -124,4 +126,57 @@ func (t *TaskService) MemberProjectList(co context.Context, msg *task.TaskReqMes
 		List:  list,
 		Total: total,
 	}, nil
+}
+
+func (t *TaskService) TaskList(ctx context.Context, msg *task.TaskReqMessage) (*task.TaskListResponse, error) {
+	stageCode := encrypts.DecryptNoErr(msg.StageCode)
+	c, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	taskList, err := t.taskRepo.FindTaskByStageCode(c, int(stageCode))
+	if err != nil {
+		zap.L().Error("project task TaskList FindTaskByStageCode error", zap.Error(err))
+		return nil, errs.GrpcError(model.DBError)
+	}
+	var taskDisplayList []*data.TaskDisplay
+	var mIds []int64
+	for _, v := range taskList {
+		display := v.ToTaskDisplay()
+		if v.Private == 1 { //隐私模式
+			taskMember, err := t.taskRepo.FindTaskMemberByTaskId(ctx, v.Id, msg.MemberId)
+			if err != nil {
+				zap.L().Error("project task TaskList FindTaskMemberByTaskId error", zap.Error(err))
+				return nil, errs.GrpcError(model.DBError)
+			}
+			if taskMember == nil {
+				display.CanRead = model.NoCanRead
+			} else {
+				display.CanRead = model.CanRead
+			}
+		}
+		taskDisplayList = append(taskDisplayList, display)
+		mIds = append(mIds, v.AssignTo)
+	}
+	if mIds == nil || len(mIds) <= 0 {
+		return &task.TaskListResponse{List: nil}, nil
+	}
+	messageList, err := rpc.LoginServiceClient.FindMemInfoByIds(ctx, &login.UserMessage{MIds: mIds})
+	if err != nil {
+		zap.L().Error("project task TaskList LoginServiceClient.FindMemInfoByIds error", zap.Error(err))
+		return nil, err
+	}
+	memberMap := make(map[int64]*login.MemberMessage)
+	for _, v := range messageList.List {
+		memberMap[v.Id] = v
+	}
+	for _, v := range taskDisplayList {
+		message := memberMap[encrypts.DecryptNoErr(v.AssignTo)]
+		e := data.Executor{
+			Name:   message.Name,
+			Avatar: message.Avatar,
+		}
+		v.Executor = e
+	}
+	var taskMessageList []*task.TaskMessage
+	copier.Copy(&taskMessageList, taskDisplayList)
+	return &task.TaskListResponse{List: taskMessageList}, nil
 }

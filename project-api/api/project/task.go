@@ -65,9 +65,10 @@ func (t *HandlerTask) memberProjectList(c *gin.Context) {
 	page := &model.Page{}
 	page.Bind(c)
 
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 200*time.Second)
 	defer cancel()
 	msg := &task.TaskReqMessage{
+		MemberId:    c.GetInt64("memberId"),
 		ProjectCode: projectCode,
 		Page:        page.Page,
 		PageSize:    page.PageSize,
@@ -88,6 +89,32 @@ func (t *HandlerTask) memberProjectList(c *gin.Context) {
 		"total": memberResp.Total,
 		"page":  page.Page,
 	}))
+}
+
+func (t *HandlerTask) taskList(c *gin.Context) {
+	result := &common.Result{}
+	stageCode := c.PostForm("stageCode")
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	list, err := TaskServiceClient.TaskList(ctx, &task.TaskReqMessage{StageCode: stageCode})
+	if err != nil {
+		code, msg := errs.ParseGrpcError(err)
+		c.JSON(http.StatusOK, result.Fail(code, msg))
+	}
+	var taskDisplayList []*tasks.TaskDisplay
+	copier.Copy(&taskDisplayList, list.List)
+	if taskDisplayList == nil {
+		taskDisplayList = []*tasks.TaskDisplay{}
+	}
+	for _, v := range taskDisplayList {
+		if v.Tags == nil {
+			v.Tags = []int{}
+		}
+		if v.ChildCount == nil {
+			v.ChildCount = []int{}
+		}
+	}
+	c.JSON(http.StatusOK, result.Success(taskDisplayList))
 }
 
 func NewTask() *HandlerTask {

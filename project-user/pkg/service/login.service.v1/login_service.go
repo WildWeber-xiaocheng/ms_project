@@ -318,6 +318,9 @@ func (ls *LoginService) FindMemInfoByIds(ctx context.Context, msg *login.UserMes
 		zap.L().Error("FindMemInfoByIds db memberRepo.FindMemberByIds error", zap.Error(err))
 		return nil, errs.GrpcError(model.DBError)
 	}
+	if memberList == nil || len(memberList) <= 0 {
+		return &login.MemberMessageList{List: nil}, nil
+	}
 	mMap := make(map[int64]*member.Member)
 	for _, v := range memberList {
 		mMap[v.Id] = v
