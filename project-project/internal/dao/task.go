@@ -12,6 +12,22 @@ type TaskDao struct {
 	conn *gorms.GormConn
 }
 
+func (t TaskDao) UpdateTaskSort(ctx context.Context, conn database.DbConn, ts *data.Task) error {
+	t.conn = conn.(*gorms.GormConn)
+	err := t.conn.Tx(ctx).Model(&data.Task{}).
+		Where("id=?", ts.Id).
+		Select("sort", "stage_code").
+		Updates(&ts).
+		Error
+	return err
+}
+
+func (t TaskDao) FindTaskById(ctx context.Context, taskCode int64) (ts *data.Task, err error) {
+	session := t.conn.Session(ctx)
+	err = session.Where("id = ?", taskCode).Find(&ts).Error
+	return
+}
+
 func (t TaskDao) SaveTaskMember(ctx context.Context, conn database.DbConn, tm *data.TaskMember) error {
 	t.conn = conn.(*gorms.GormConn)
 	err := t.conn.Tx(ctx).Save(&tm).Error

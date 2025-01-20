@@ -278,3 +278,54 @@ func (t *TaskService) SaveTask(ctx context.Context, msg *task.TaskReqMessage) (*
 	copier.Copy(tm, display)
 	return tm, nil
 }
+
+func (t *TaskService) TaskSort(ctx context.Context, msg *task.TaskReqMessage) (*task.TaskSortResponse, error) {
+	//要移动的任务肯定有preTaskCode,不一定有toStageCode
+	preTaskCode := encrypts.DecryptNoErr(msg.PreTaskCode)
+	toStageCode := encrypts.DecryptNoErr(msg.ToStageCode)
+	c, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	ts, err := t.taskRepo.FindTaskById(c, preTaskCode)
+	if err != nil {
+		zap.L().Error("project task TaskSort taskRepo.FindTaskById error", zap.Error(err))
+		return nil, errs.GrpcError(model.DBError)
+	}
+	isChange := false
+	//相等，不需要进行改变
+	if ts.StageCode != int(toStageCode) {
+		ts.StageCode = int(toStageCode)
+		isChange = true
+	}
+	err = t.transaction.Action(func(conn database.DbConn) error {
+		if msg.NextTaskCode != "" {
+			//顺序变了 需要互换位置
+			nextTaskCode := encrypts.DecryptNoErr(msg.NextTaskCode)
+			next, err := t.taskRepo.FindTaskById(c, nextTaskCode)
+			if err != nil {
+				zap.L().Error("project task TaskSort nextTaskId taskRepo.FindTaskById error", zap.Error(err))
+				return errs.GrpcError(model.DBError)
+			}
+			sort := ts.Sort
+			ts.Sort = next.Sort
+			next.Sort = sort
+			err = t.taskRepo.UpdateTaskSort(ctx, conn, next)
+			if err != nil {
+				zap.L().Error("project task TaskSort nextTaskId taskRepo.UpdateTaskSort error", zap.Error(err))
+				return err
+			}
+			isChange = true
+		}
+		if isChange {
+			err := t.taskRepo.UpdateTaskSort(ctx, conn, ts)
+			if err != nil {
+				zap.L().Error("project task TaskSort nextTaskId taskRepo.UpdateTaskSort error", zap.Error(err))
+				return err
+			}
+		}
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &task.TaskSortResponse{}, nil
+}
