@@ -232,3 +232,20 @@
 {"level":"INFO","time":"2025-01-19T23:01:39.898+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
 {"level":"INFO","time":"2025-01-19T23:01:40.171+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
 {"level":"INFO","time":"2025-01-19T23:01:40.171+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:38:40.557+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-01-20T22:38:40.572+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-20T22:38:40.592+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-20T22:38:40.598+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"ERROR","time":"2025-01-20T22:42:09.502+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-20T22:42:33.136+0800","caller":"task.service.v1/task_service.go:202","msg":"project task SaveTask projectRepo.FindProjectById error","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-20T22:42:33.150+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"etcdserver: requested lease not found"}
+{"level":"INFO","time":"2025-01-20T22:42:40.816+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:42:40.826+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:42:40.836+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:42:40.842+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"ERROR","time":"2025-01-20T22:42:51.400+0800","caller":"task.service.v1/task_service.go:202","msg":"project task SaveTask projectRepo.FindProjectById error","error":"context deadline exceeded"}
+{"level":"INFO","time":"2025-01-20T22:43:15.251+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:43:19.146+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:43:19.157+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:43:19.165+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
+{"level":"INFO","time":"2025-01-20T22:43:19.170+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
