@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;任务-创建任务&quot;功能">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;任务-移动任务&quot;功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/tasks/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/tasks/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/internal/dao/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/task.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/internal/repo/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/task.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" afterDir="false" />
@@ -175,7 +172,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: 对id进行加密" />
     <MESSAGE value="add:添加 project-project模块以及/project/index接口的实现" />
     <MESSAGE value="add:添加 验证用户是否登录功能" />
     <MESSAGE value="add:添加快捷生成数据库表对应的message和struct代码" />
@@ -200,7 +196,8 @@
     <MESSAGE value="add: &quot;任务-任务看板&quot;功能" />
     <MESSAGE value="add: &quot;任务-任务步骤列表&quot;功能" />
     <MESSAGE value="add: &quot;任务-创建任务&quot;功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;任务-创建任务&quot;功能" />
+    <MESSAGE value="add: &quot;任务-移动任务&quot;功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;任务-移动任务&quot;功能" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

@@ -105,3 +105,13 @@
 {"level":"ERROR","time":"2025-01-20T22:42:33.136+0800","caller":"task.service.v1/task_service.go:202","msg":"project task SaveTask projectRepo.FindProjectById error","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-01-20T22:42:33.150+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"etcdserver: requested lease not found"}
 {"level":"ERROR","time":"2025-01-20T22:42:51.400+0800","caller":"task.service.v1/task_service.go:202","msg":"project task SaveTask projectRepo.FindProjectById error","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-21T21:50:47.196+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-21T21:50:47.199+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-21T21:50:48.572+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-21T21:50:49.078+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-21T21:50:49.080+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-22T20:50:52.200+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-22T20:50:52.203+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-22T20:50:52.287+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-22T20:50:52.324+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-22T20:50:52.325+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
