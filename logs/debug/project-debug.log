@@ -340,3 +340,7 @@
 {"level":"INFO","time":"2025-01-22T22:21:41.150+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
 {"level":"INFO","time":"2025-01-22T22:21:41.161+0800","caller":"interceptor/cache.go:49","msg":"/project.service.v1.ProjectService/FindProjectByMemId走了缓存"}
 {"level":"INFO","time":"2025-01-22T22:21:41.167+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/FindMemInfoById走了缓存"}
+{"level":"INFO","time":"2025-01-22T23:38:12.743+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-01-22T23:38:12.852+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-01-22T23:56:13.790+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-01-22T23:56:13.817+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}

@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;任务-移动任务&quot;功能">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;任务-移动任务&quot;功能的完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/tasks/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/tasks/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/project.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/project_template.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/project_template.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/internal/dao/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/data/pro/pro.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/pro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/data/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/project.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/internal/repo/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/model/biz.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/model/biz.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_collect.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_collect.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,9 +98,9 @@
       <recent name="C:\goCode\ms_project\project-api\api\project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goCode\ms_project\project-project\internal\data" />
       <recent name="C:\goCode\ms_project\project-grpc\task" />
       <recent name="C:\goCode\ms_project\project-grpc\user\login" />
-      <recent name="C:\goCode\ms_project\project-project\internal\data" />
       <recent name="C:\goCode\ms_project\project-grpc\project" />
       <recent name="C:\goCode\ms_project\project-api\api\rpc" />
     </key>
@@ -137,9 +150,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
       </list>
@@ -172,7 +185,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add:添加 project-project模块以及/project/index接口的实现" />
     <MESSAGE value="add:添加 验证用户是否登录功能" />
     <MESSAGE value="add:添加快捷生成数据库表对应的message和struct代码" />
     <MESSAGE value="add:添加&quot;我的项目列表&quot;接口的实现" />
@@ -197,7 +209,8 @@
     <MESSAGE value="add: &quot;任务-任务步骤列表&quot;功能" />
     <MESSAGE value="add: &quot;任务-创建任务&quot;功能" />
     <MESSAGE value="add: &quot;任务-移动任务&quot;功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;任务-移动任务&quot;功能" />
+    <MESSAGE value="add: &quot;任务-移动任务&quot;功能的完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;任务-移动任务&quot;功能的完善" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
