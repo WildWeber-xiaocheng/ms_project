@@ -28,6 +28,7 @@ type TaskService struct {
 	taskStagesTemplateRepo repo.TaskStagesTemplateRepo
 	taskStagesRepo         repo.TaskStagesRepo
 	taskRepo               repo.TaskRepo
+	projectLogRepo         repo.ProjectLogRepo
 }
 
 func New() *TaskService {
@@ -39,6 +40,7 @@ func New() *TaskService {
 		taskStagesTemplateRepo: dao.NewTaskStagesTemplateDao(),
 		taskStagesRepo:         dao.NewTaskStagesDao(),
 		taskRepo:               dao.NewTaskDao(),
+		projectLogRepo:         dao.NewProjectLogDao(),
 	}
 }
 
@@ -273,9 +275,33 @@ func (t *TaskService) SaveTask(ctx context.Context, msg *task.TaskReqMessage) (*
 		Avatar: member.Avatar,
 		Code:   member.Code,
 	}
+	//添加任务动态
+	createProjectLog(t.projectLogRepo, ts.ProjectCode, ts.Id, ts.Name, ts.AssignTo, "create", "task")
 	tm := &task.TaskMessage{}
 	copier.Copy(tm, display)
 	return tm, nil
+}
+
+func createProjectLog(logRepo repo.ProjectLogRepo, projectCode int64, taskCode int64, taskName string,
+	toMemberCode int64, logType string, actionType string) {
+	remark := ""
+	if logType == "create" {
+		remark = "创建了任务"
+	}
+	pl := &data.ProjectLog{
+		MemberCode:  toMemberCode,
+		SourceCode:  taskCode,
+		Content:     taskName,
+		Remark:      remark,
+		ProjectCode: projectCode,
+		CreateTime:  time.Now().UnixMilli(),
+		Type:        logType,
+		ActionType:  actionType,
+		Icon:        "plus",
+		IsComment:   0,
+		IsRobot:     0,
+	}
+	logRepo.SaveProjectLog(pl)
 }
 
 func (t *TaskService) TaskSort(ctx context.Context, msg *task.TaskReqMessage) (*task.TaskSortResponse, error) {
