@@ -12,6 +12,19 @@ type TaskDao struct {
 	conn *gorms.GormConn
 }
 
+func (t TaskDao) FindTaskMemberPage(ctx context.Context, taskCode int64, page int64, size int64) (list []*data.TaskMember, total int64, err error) {
+	session := t.conn.Session(ctx)
+	offset := (page - 1) * size
+	err = session.Model(&data.TaskMember{}).
+		Where("task_code=?", taskCode).
+		Limit(int(size)).
+		Offset(int(offset)).Find(&list).Error
+	err = session.Model(&data.TaskMember{}).
+		Where("task_code=?", taskCode).
+		Count(&total).Error
+	return
+}
+
 func (t TaskDao) FindTaskByAssignTo(ctx context.Context, memberId int64, done int, page int64, size int64) (tsList []*data.Task, total int64, err error) {
 	session := t.conn.Session(ctx)
 	offset := (page - 1) * size

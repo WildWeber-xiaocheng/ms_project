@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:为api添加日志中间件，修改部分接口">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加“任务详情”接口">
+      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/tasks/task_member.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/tasks/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/tasks/task.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service_grpc.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/data/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/task.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,9 +140,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
       </list>
@@ -176,7 +175,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add:添加&quot;我的组织列表&quot;接口的实现" />
     <MESSAGE value="fix: 添加和修改一些字段" />
     <MESSAGE value="fix: 修改login函数的逻辑" />
     <MESSAGE value="fix: 修改index函数的逻辑" />
@@ -201,7 +199,8 @@
     <MESSAGE value="add: &quot;首页-我的任务&quot;功能的完善" />
     <MESSAGE value="fix: jwt生成token添加ip信息" />
     <MESSAGE value="add:为api添加日志中间件，修改部分接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:为api添加日志中间件，修改部分接口" />
+    <MESSAGE value="add:添加“任务详情”接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:添加“任务详情”接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

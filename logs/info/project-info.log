@@ -458,3 +458,11 @@
 {"level":"INFO","time":"2025-01-30T20:11:06.081+0800","caller":"midd/log_time.go:16","msg":"/project/task_stages/tasks 用时 7 ms"}
 {"level":"INFO","time":"2025-01-30T20:11:06.132+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskLog 用时 0 ms"}
 {"level":"INFO","time":"2025-01-30T20:11:06.136+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskSources 用时 0 ms"}
+{"level":"INFO","time":"2025-01-30T20:46:56.754+0800","caller":"midd/log_time.go:16","msg":"/project/task_stages/tasks 用时 29 ms"}
+{"level":"INFO","time":"2025-01-30T20:46:58.468+0800","caller":"midd/log_time.go:16","msg":"/project/task 用时 0 ms"}
+{"level":"INFO","time":"2025-01-30T20:46:58.468+0800","caller":"midd/log_time.go:16","msg":"/project/task/_taskWorkTimeList 用时 0 ms"}
+{"level":"INFO","time":"2025-01-30T20:46:58.497+0800","caller":"midd/log_time.go:16","msg":"/project/task_member 用时 29 ms"}
+{"level":"INFO","time":"2025-01-30T20:46:58.506+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
+{"level":"INFO","time":"2025-01-30T20:46:58.509+0800","caller":"midd/log_time.go:16","msg":"/project/task/read 用时 41 ms"}
+{"level":"INFO","time":"2025-01-30T20:46:58.602+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskLog 用时 0 ms"}
+{"level":"INFO","time":"2025-01-30T20:46:58.606+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskSources 用时 0 ms"}

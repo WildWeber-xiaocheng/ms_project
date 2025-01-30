@@ -115,3 +115,9 @@
 {"level":"ERROR","time":"2025-01-22T20:50:52.287+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-01-22T20:50:52.324+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-01-22T20:50:52.325+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-01-30T20:09:18.162+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-30T20:09:18.165+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-30T20:09:44.570+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-30T20:09:44.570+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-30T20:10:01.066+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-01-30T20:10:01.068+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
