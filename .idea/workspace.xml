@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加“任务详情”接口">
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/task_work_time.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/task_work_time.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/task_work_time.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/task_repo_time.go" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加“查看任务工时列表”的接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/task_work_time.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/task_work_time.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-common/tms/tms.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/tms/tms.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service_grpc.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" afterDir="false" />
@@ -176,9 +174,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: 添加和修改一些字段" />
-    <MESSAGE value="fix: 修改login函数的逻辑" />
-    <MESSAGE value="fix: 修改index函数的逻辑" />
     <MESSAGE value="fix: 修改“我的项目列表”的逻辑" />
     <MESSAGE value="fix: 修改“我的项目列表”的逻辑，添加收藏、已归档、回收站功能" />
     <MESSAGE value="add: 添加“项目模版”功能" />
@@ -201,7 +196,10 @@
     <MESSAGE value="fix: jwt生成token添加ip信息" />
     <MESSAGE value="add:为api添加日志中间件，修改部分接口" />
     <MESSAGE value="add:添加“任务详情”接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:添加“任务详情”接口" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;logs/debug/project-debug.log&#10;#&#9;logs/info/project-info.log" />
+    <MESSAGE value="add:添加“查看任务动态”的接口" />
+    <MESSAGE value="add:添加“查看任务工时列表”的接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:添加“查看任务工时列表”的接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
