@@ -466,14 +466,3 @@
 {"level":"INFO","time":"2025-01-30T20:46:58.509+0800","caller":"midd/log_time.go:16","msg":"/project/task/read 用时 41 ms"}
 {"level":"INFO","time":"2025-01-30T20:46:58.602+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskLog 用时 0 ms"}
 {"level":"INFO","time":"2025-01-30T20:46:58.606+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskSources 用时 0 ms"}
-{"level":"INFO","time":"2025-01-30T21:41:05.274+0800","caller":"midd/log_time.go:16","msg":"/project/task_stages/tasks 用时 16 ms"}
-{"level":"INFO","time":"2025-01-30T21:41:22.034+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
-{"level":"INFO","time":"2025-01-30T21:41:22.044+0800","caller":"midd/log_time.go:16","msg":"/project/task/save 用时 39 ms"}
-{"level":"INFO","time":"2025-01-30T21:56:58.289+0800","caller":"midd/log_time.go:16","msg":"/project/task 用时 0 ms"}
-{"level":"INFO","time":"2025-01-30T21:56:58.289+0800","caller":"midd/log_time.go:16","msg":"/project/task/_taskWorkTimeList 用时 0 ms"}
-{"level":"INFO","time":"2025-01-30T21:56:58.317+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/FindMemInfoById放入缓存"}
-{"level":"INFO","time":"2025-01-30T21:56:58.320+0800","caller":"midd/log_time.go:16","msg":"/project/task_member 用时 31 ms"}
-{"level":"INFO","time":"2025-01-30T21:56:58.321+0800","caller":"midd/log_time.go:16","msg":"/project/task/read 用时 36 ms"}
-{"level":"INFO","time":"2025-01-30T21:56:58.432+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskSources 用时 0 ms"}
-{"level":"INFO","time":"2025-01-30T21:56:58.458+0800","caller":"midd/log_time.go:16","msg":"/project/task/taskLog 用时 26 ms"}
-{"level":"INFO","time":"2025-01-30T21:57:00.742+0800","caller":"midd/log_time.go:16","msg":"/project/task_stages/tasks 用时 8 ms"}
