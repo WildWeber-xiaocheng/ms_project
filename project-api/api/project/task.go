@@ -297,6 +297,28 @@ func (t *HandlerTask) taskLog(c *gin.Context) {
 	}))
 }
 
+func (t *HandlerTask) taskWorkTimeList(c *gin.Context) {
+	taskCode := c.PostForm("taskCode")
+	result := &common.Result{}
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	msg := &task.TaskReqMessage{
+		TaskCode: taskCode,
+		MemberId: c.GetInt64("memberId"),
+	}
+	taskWorkTimeResponse, err := TaskServiceClient.TaskWorkTimeList(ctx, msg)
+	if err != nil {
+		code, msg := errs.ParseGrpcError(err)
+		c.JSON(http.StatusOK, result.Fail(code, msg))
+	}
+	var tms []*model.TaskWorkTime
+	copier.Copy(&tms, taskWorkTimeResponse.List)
+	if tms == nil {
+		tms = []*model.TaskWorkTime{}
+	}
+	c.JSON(http.StatusOK, result.Success(tms))
+}
+
 func NewTask() *HandlerTask {
 	return &HandlerTask{}
 }
