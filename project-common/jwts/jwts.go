@@ -1,6 +1,7 @@
 package jwts
 
 import (
+	"errors"
 	"fmt"
 	"github.com/golang-jwt/jwt/v4"
 	"time"
@@ -13,11 +14,12 @@ type JwtToken struct {
 	RefreshExp   int64
 }
 
-func CreateToken(val string, exp time.Duration, secret string, refreshExp time.Duration, refreshSecret string) *JwtToken {
+func CreateToken(val string, exp time.Duration, secret string, refreshExp time.Duration, refreshSecret string, ip string) *JwtToken {
 	aExp := time.Now().Add(exp).Unix()
 	accessToken := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"token": val,
 		"exp":   aExp,
+		"ip":    ip,
 	})
 	aToken, _ := accessToken.SignedString([]byte(secret))
 
@@ -36,7 +38,7 @@ func CreateToken(val string, exp time.Duration, secret string, refreshExp time.D
 	}
 }
 
-func ParseToken(tokenString string, secret string) (string, error) {
+func ParseToken(tokenString string, secret string, ip string) (string, error) {
 	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
@@ -52,6 +54,9 @@ func ParseToken(tokenString string, secret string) (string, error) {
 		exp := int64(claims["exp"].(float64))
 		if exp < time.Now().Unix() {
 			return "", fmt.Errorf("token expired")
+		}
+		if claims["ip"] != ip {
+			return "", errors.New("ip not match")
 		}
 		return val, nil
 	} else {
