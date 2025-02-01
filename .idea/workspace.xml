@@ -4,25 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加“添加任务工时”的接口">
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/upload_file.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-common/fs/fs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/file.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/source_link.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/file.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/source_link.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/file.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/source_link.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:添加“任务-上传文件”的接口">
+      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/source_link.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/task/task_service_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/task_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/source_link.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/source_link.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,9 +136,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
       </list>
@@ -184,7 +171,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: 修改“我的项目列表”的逻辑，添加收藏、已归档、回收站功能" />
     <MESSAGE value="add: 添加“项目模版”功能" />
     <MESSAGE value="add: 添加“创建项目”功能" />
     <MESSAGE value="add: 添加“读取项目”的基础功能" />
@@ -209,7 +195,8 @@
     <MESSAGE value="add:添加“查看任务动态”的接口" />
     <MESSAGE value="add:添加“查看任务工时列表”的接口" />
     <MESSAGE value="add:添加“添加任务工时”的接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:添加“添加任务工时”的接口" />
+    <MESSAGE value="add:添加“任务-上传文件”的接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:添加“任务-上传文件”的接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
