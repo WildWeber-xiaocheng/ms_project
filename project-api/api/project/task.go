@@ -2,14 +2,19 @@ package project
 
 import (
 	"context"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/copier"
+	"go.uber.org/zap"
 	"net/http"
+	"os"
+	"path"
 	"test.com/project-api/pkg/model"
 	"test.com/project-api/pkg/model/pro"
 	"test.com/project-api/pkg/model/tasks"
 	common "test.com/project-common"
 	"test.com/project-common/errs"
+	"test.com/project-common/fs"
 	"test.com/project-common/tms"
 	"test.com/project-grpc/task"
 	"time"
@@ -339,6 +344,95 @@ func (t *HandlerTask) saveTaskWorkTime(c *gin.Context) {
 		c.JSON(http.StatusOK, result.Fail(code, msg))
 	}
 	c.JSON(http.StatusOK, result.Success([]int{}))
+}
+
+func (t *HandlerTask) uploadFiles(c *gin.Context) {
+	result := &common.Result{}
+	req := model.UploadFileReq{}
+	c.ShouldBind(&req)
+	//处理文件
+	multipartForm, err := c.MultipartForm()
+	if err != nil {
+		zap.L().Error("c.MultipartForm() err", zap.Error(err))
+		return
+	}
+	file := multipartForm.File
+	key := ""
+	uploadFile := file["file"][0] //文件只有一个，拿到文件名
+	if req.TotalChunks == 1 {     //代表不分片，直接上传
+		path := "upload/" + req.ProjectCode + "/" + req.TaskCode + "/" + tms.FormatYMD(time.Now())
+		if !fs.IsExist(path) {
+			os.MkdirAll(path, os.ModePerm)
+		}
+		dst := path + "/" + req.Filename
+		key = dst
+		header := uploadFile
+		err := c.SaveUploadedFile(header, dst)
+		if err != nil {
+			c.JSON(http.StatusOK, result.Fail(-999, err.Error()))
+			return
+		}
+	}
+	if req.TotalChunks > 1 { //分片上传 先把每次分片的数据存起来，再合起来即可
+		path := "upload/" + req.ProjectCode + "/" + req.TaskCode + "/" + tms.FormatYMD(time.Now())
+		if !fs.IsExist(path) {
+			os.MkdirAll(path, os.ModePerm)
+		}
+		fileName := path + "/" + req.Identifier
+		openFile, err := os.OpenFile(fileName, os.O_CREATE|os.O_APPEND|os.O_RDWR, os.ModePerm)
+		if err != nil {
+			c.JSON(http.StatusOK, result.Fail(-999, err.Error()))
+			return
+		}
+		open, err := uploadFile.Open()
+		if err != nil {
+			c.JSON(http.StatusOK, result.Fail(-999, err.Error()))
+			return
+		}
+		defer open.Close()
+		buf := make([]byte, req.CurrentChunkSize)
+		open.Read(buf)
+		openFile.Write(buf)
+		openFile.Close()
+		key = fileName
+		if req.TotalChunks == req.ChunkNumber { //最后一块 重命名文件名
+			newpath := path + "/" + req.Filename //改名
+			key = newpath
+			err := os.Rename(fileName, newpath)
+			fmt.Println(err)
+		}
+	}
+	//调用服务 存入file表
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	fileUrl := "http://localhost/" + key
+	msg := &task.TaskFileReqMessage{
+		TaskCode:         req.TaskCode,
+		ProjectCode:      req.ProjectCode,
+		OrganizationCode: c.GetString("organizationCode"),
+		PathName:         key,
+		FileName:         req.Filename,
+		Size:             int64(req.TotalSize),
+		Extension:        path.Ext(key),
+		FileUrl:          fileUrl,
+		FileType:         file["file"][0].Header.Get("Content-Type"),
+		MemberId:         c.GetInt64("memberId"),
+	}
+	if req.TotalChunks == req.ChunkNumber {
+		_, err := TaskServiceClient.SaveTaskFile(ctx, msg)
+		if err != nil {
+			code, msg := errs.ParseGrpcError(err)
+			c.JSON(http.StatusOK, result.Fail(code, msg))
+		}
+	}
+	c.JSON(http.StatusOK, result.Success(gin.H{
+		"file":        key,
+		"hash":        "",
+		"key":         key,
+		"url":         "http://localhost/" + key,
+		"projectName": req.ProjectName,
+	}))
+	return
 }
 
 func NewTask() *HandlerTask {

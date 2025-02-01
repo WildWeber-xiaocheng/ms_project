@@ -3,6 +3,7 @@
 *.iml
 out
 gen
+upload
 *.bat
 *.exe
 *.log
