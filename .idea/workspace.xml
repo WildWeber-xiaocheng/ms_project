@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:project-api添加pprof">
+      <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/task_work_time.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/user_rpc.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.work.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.work.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-common/errs/grpc_err.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/errs/grpc_err.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
