@@ -655,3 +655,12 @@
 {"level":"ERROR","time":"2025-02-05T20:37:20.600+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-02-05T20:37:20.753+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-02-05T20:37:21.386+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"INFO","time":"2025-02-06T00:01:58.280+0800","caller":"midd/log_time.go:16","msg":"/project/department 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T00:01:58.317+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 38 ms"}
+{"level":"INFO","time":"2025-02-06T00:02:24.044+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 10 ms"}
+{"level":"INFO","time":"2025-02-06T00:02:25.572+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 7 ms"}
+{"level":"INFO","time":"2025-02-06T00:02:34.952+0800","caller":"midd/log_time.go:16","msg":"/project/notify/noReads 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T00:02:34.953+0800","caller":"midd/log_time.go:16","msg":"/project/department 用时 1 ms"}
+{"level":"INFO","time":"2025-02-06T00:02:34.961+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-02-06T00:02:34.964+0800","caller":"midd/log_time.go:16","msg":"/project/organization/_getOrgList 用时 14 ms"}
+{"level":"INFO","time":"2025-02-06T00:02:34.967+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 15 ms"}
