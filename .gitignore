@@ -4,6 +4,7 @@
 out
 gen
 upload
+profile_test
 *.bat
 *.exe
 *.log
