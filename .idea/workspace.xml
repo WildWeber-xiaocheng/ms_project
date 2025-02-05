@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:project-api添加pprof">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add:y引入domain">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/task_work_time.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/user_rpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/api/project/account.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/member_account.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/project_auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/api/proto/account_service.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-common/errs/grpc_err.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-common/errs/grpc_err.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/task.service.v1/task_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,8 +138,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
@@ -173,8 +173,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <MESSAGE value="add: 添加“收藏项目”和“回收站”的功能" />
     <MESSAGE value="add: 为user模块的部分接口添加缓存" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="add: 为project模块的部分接口添加缓存" />
@@ -198,7 +196,9 @@
     <MESSAGE value="add:添加“任务-任务评论”的接口" />
     <MESSAGE value="add:添加“首页动态列表”的接口" />
     <MESSAGE value="add:project-api添加pprof" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:project-api添加pprof" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="add:y引入domain" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:y引入domain" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
