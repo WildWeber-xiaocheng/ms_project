@@ -704,3 +704,15 @@
 {"level":"INFO","time":"2025-02-06T21:37:42.168+0800","caller":"midd/log_time.go:16","msg":"/project/department/save 用时 10 ms"}
 {"level":"INFO","time":"2025-02-06T21:41:47.802+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 8 ms"}
 {"level":"INFO","time":"2025-02-06T21:41:50.714+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 6 ms"}
+{"level":"INFO","time":"2025-02-06T22:12:57.200+0800","caller":"midd/log_time.go:16","msg":"/project/menu/menu 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T22:13:21.591+0800","caller":"midd/log_time.go:16","msg":"/project/notify/noReads 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T22:13:21.591+0800","caller":"midd/log_time.go:16","msg":"/project/menu/menu 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T22:13:21.600+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-02-06T22:13:21.601+0800","caller":"midd/log_time.go:16","msg":"/project/organization/_getOrgList 用时 16 ms"}
+{"level":"INFO","time":"2025-02-06T22:13:29.314+0800","caller":"midd/log_time.go:16","msg":"/project/auth 用时 9 ms"}
+{"level":"INFO","time":"2025-02-06T22:16:39.796+0800","caller":"midd/log_time.go:16","msg":"/project/notify/noReads 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T22:16:39.799+0800","caller":"interceptor/cache.go:49","msg":"/login.service.v1.LoginService/MyOrgList走了缓存"}
+{"level":"INFO","time":"2025-02-06T22:16:39.799+0800","caller":"midd/log_time.go:16","msg":"/project/organization/_getOrgList 用时 3 ms"}
+{"level":"INFO","time":"2025-02-06T22:16:39.806+0800","caller":"midd/log_time.go:16","msg":"/project/auth 用时 10 ms"}
+{"level":"INFO","time":"2025-02-06T22:51:14.638+0800","caller":"midd/log_time.go:16","msg":"/project/menu/menu 用时 24 ms"}
+{"level":"INFO","time":"2025-02-06T23:19:40.266+0800","caller":"midd/log_time.go:16","msg":"/project/node 用时 17 ms"}
