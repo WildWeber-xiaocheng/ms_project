@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"strconv"
 	"test.com/project-api/pkg/model"
-	"test.com/project-api/pkg/model/menu"
 	"test.com/project-api/pkg/model/pro"
 	common "test.com/project-common"
 	"test.com/project-common/errs"
@@ -28,7 +27,7 @@ func (p HandlerProject) index(c *gin.Context) {
 		code, msg := errs.ParseGrpcError(err)
 		c.JSON(http.StatusOK, result.Fail(code, msg))
 	}
-	var menus []*menu.Menu
+	var menus []*model.Menu
 	copier.Copy(&menus, indexResponse.Menus)
 	c.JSON(http.StatusOK, result.Success(menus))
 }

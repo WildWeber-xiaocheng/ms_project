@@ -60,4 +60,7 @@ func (*RouterProject) Register(r *gin.Engine) {
 
 	auth := NewAuth()
 	group.POST("/auth", auth.authList)
+
+	menu := NewMenu()
+	group.POST("/menu/menu", menu.menuList)
 }

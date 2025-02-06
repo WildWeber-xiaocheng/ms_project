@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;读取部门信息&quot;接口">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;授权列表&quot;接口">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/api/project/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/api/proto/auth_service.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/auth.service.v1/auth_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/api/project/menu.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/api/proto/menu_service.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/menu.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/menu.service.v1/menu_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/rpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/project_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/project_auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/domain/project_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/project_auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/project_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/project_auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/menu.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/router/router.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,11 +90,11 @@
       <recent name="C:\goCode\ms_project\project-api\api\project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goCode\ms_project\project-grpc\menu" />
+      <recent name="C:\goCode\ms_project\project-api\pkg\model" />
       <recent name="C:\goCode\ms_project\project-grpc\auth" />
       <recent name="C:\goCode\ms_project\project-grpc\department" />
       <recent name="C:\goCode\ms_project\project-grpc\account" />
-      <recent name="C:\goCode\ms_project\project-grpc\project" />
-      <recent name="C:\goCode\ms_project\project-grpc\task" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go (2)">
@@ -177,7 +177,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: &quot;任务-任务看板&quot;功能的部分：添加项目时，保存任务到数据库中" />
     <MESSAGE value="add: &quot;任务-任务看板&quot;功能" />
     <MESSAGE value="add: &quot;任务-任务步骤列表&quot;功能" />
     <MESSAGE value="add: &quot;任务-创建任务&quot;功能" />
@@ -202,7 +201,8 @@
     <MESSAGE value="add: &quot;账户列表&quot;接口的service部分" />
     <MESSAGE value="add: &quot;创建部门和部门列表&quot;接口" />
     <MESSAGE value="add: &quot;读取部门信息&quot;接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;读取部门信息&quot;接口" />
+    <MESSAGE value="add: &quot;授权列表&quot;接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;授权列表&quot;接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
