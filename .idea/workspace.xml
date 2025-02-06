@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;账户列表&quot;接口的service部分">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;创建部门和部门列表&quot;接口">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/api/project/department.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/department.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/api/proto/department_service.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/department.service.v1/department_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/department.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/rpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/department.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/data/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/department.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/department/department_service.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/department/department_service_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/api/proto/department_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/department_service.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/internal/domain/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/department.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/department.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/router/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/department.service.v1/department_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/department.service.v1/department_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +177,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: 为project模块的部分接口添加缓存" />
     <MESSAGE value="add: &quot;任务-任务看板&quot;功能api部分" />
     <MESSAGE value="add: &quot;任务-任务看板&quot;功能的部分：添加项目时，保存任务到数据库中" />
     <MESSAGE value="add: &quot;任务-任务看板&quot;功能" />
@@ -205,7 +201,8 @@
     <MESSAGE value="add:y引入domain" />
     <MESSAGE value="add: &quot;账户列表&quot;接口的api部分" />
     <MESSAGE value="add: &quot;账户列表&quot;接口的service部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;账户列表&quot;接口的service部分" />
+    <MESSAGE value="add: &quot;创建部门和部门列表&quot;接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;创建部门和部门列表&quot;接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

@@ -664,3 +664,43 @@
 {"level":"INFO","time":"2025-02-06T00:02:34.961+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
 {"level":"INFO","time":"2025-02-06T00:02:34.964+0800","caller":"midd/log_time.go:16","msg":"/project/organization/_getOrgList 用时 14 ms"}
 {"level":"INFO","time":"2025-02-06T00:02:34.967+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 15 ms"}
+{"level":"ERROR","time":"2025-02-06T20:34:20.859+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:20.861+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:23.869+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:26.897+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:29.903+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:31.707+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:31.715+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:32.506+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"etcdserver: request timed out"}
+{"level":"ERROR","time":"2025-02-06T20:34:32.905+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:35.519+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:00.828+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:01.002+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:03.828+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:04.003+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:04.003+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"INFO","time":"2025-02-06T21:36:52.114+0800","caller":"midd/log_time.go:16","msg":"/index/index/refreshAccessToken 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T21:36:53.015+0800","caller":"midd/log_time.go:16","msg":"/project/notify/noReads 用时 0 ms"}
+{"level":"ERROR","time":"2025-02-06T21:36:53.018+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-02-06T21:36:53.019+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"INFO","time":"2025-02-06T21:36:53.020+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 3 ms"}
+{"level":"INFO","time":"2025-02-06T21:36:53.020+0800","caller":"midd/log_time.go:16","msg":"/project/department 用时 2 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:09.876+0800","caller":"midd/log_time.go:16","msg":"/index/index/refreshAccessToken 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:09.876+0800","caller":"midd/log_time.go:16","msg":"/index/index/refreshAccessToken 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:19.988+0800","caller":"midd/log_time.go:16","msg":"/project/login 用时 15 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.076+0800","caller":"midd/log_time.go:16","msg":"/project/index 用时 45 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.147+0800","caller":"interceptor/cache.go:56","msg":"/login.service.v1.LoginService/MyOrgList放入缓存"}
+{"level":"INFO","time":"2025-02-06T21:37:20.147+0800","caller":"midd/log_time.go:16","msg":"/project/organization/_getOrgList 用时 6 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.148+0800","caller":"midd/log_time.go:16","msg":"/project/notify/noReads 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.171+0800","caller":"midd/log_time.go:16","msg":"/project/events/myList 用时 0 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.190+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 42 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.192+0800","caller":"midd/log_time.go:16","msg":"/project/project/getLogBySelfProject 用时 44 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.201+0800","caller":"interceptor/cache.go:56","msg":"/project.service.v1.ProjectService/FindProjectByMemId放入缓存"}
+{"level":"INFO","time":"2025-02-06T21:37:20.203+0800","caller":"midd/log_time.go:16","msg":"/project/task/selfList 用时 55 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:20.203+0800","caller":"midd/log_time.go:16","msg":"/project/project/selfList 用时 55 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:23.070+0800","caller":"midd/log_time.go:16","msg":"/project/department 用时 8 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:23.072+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 10 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:35.863+0800","caller":"midd/log_time.go:16","msg":"/project/department/save 用时 14 ms"}
+{"level":"INFO","time":"2025-02-06T21:37:42.168+0800","caller":"midd/log_time.go:16","msg":"/project/department/save 用时 10 ms"}
+{"level":"INFO","time":"2025-02-06T21:41:47.802+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 8 ms"}
+{"level":"INFO","time":"2025-02-06T21:41:50.714+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 6 ms"}
