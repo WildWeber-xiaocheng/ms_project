@@ -29,6 +29,8 @@ func TokenVerify() func(ctx *gin.Context) {
 		ctx, cancelFunc := context.WithTimeout(context.Background(), time.Second*2)
 		defer cancelFunc()
 		ip := GetIp(c)
+		//todo
+		//可以先去查询node表，确认不使用登录控制的接口，就不做登录认证
 		response, err := rpc.LoginServiceClient.TokenVerify(ctx, &login.LoginMessage{Token: token, Ip: ip})
 		//3. 处理结果，认证通过，将信息放入gin的上下文，失败则返回未登录
 		if err != nil {
