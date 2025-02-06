@@ -4,23 +4,25 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;菜单路由&quot;接口">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: 添加一个todo">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/project_node.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/project_node.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/project_node.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/project_node.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_node.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/project_auth_node.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/data/project_auth_node.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/project_auth_node.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/project_auth_node.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/project_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/project_auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/project_node.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/project_node.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/auth/auth_service.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-grpc/auth/auth_service_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/api/proto/auth_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/auth_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/data/project_node.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/project_node.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/domain/project_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/project_auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/domain/project_node.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/project_node.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/auth.service.v1/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/auth.service.v1/auth_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,11 +96,11 @@
       <recent name="C:\goCode\ms_project\project-api\api\project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goCode\ms_project\project-grpc\auth" />
       <recent name="C:\goCode\ms_project\project-grpc\project" />
       <recent name="C:\goCode\ms_project\project-project\internal\data" />
       <recent name="C:\goCode\ms_project\project-grpc\menu" />
       <recent name="C:\goCode\ms_project\project-api\pkg\model" />
-      <recent name="C:\goCode\ms_project\project-grpc\auth" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go (2)">
@@ -181,8 +183,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: &quot;任务-任务步骤列表&quot;功能" />
-    <MESSAGE value="add: &quot;任务-创建任务&quot;功能" />
     <MESSAGE value="add: &quot;任务-移动任务&quot;功能" />
     <MESSAGE value="add: &quot;任务-移动任务&quot;功能的完善" />
     <MESSAGE value="add: &quot;首页-我的任务&quot;功能的完善" />
@@ -206,7 +206,9 @@
     <MESSAGE value="add: &quot;读取部门信息&quot;接口" />
     <MESSAGE value="add: &quot;授权列表&quot;接口" />
     <MESSAGE value="add: &quot;菜单路由&quot;接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;菜单路由&quot;接口" />
+    <MESSAGE value="add: &quot;访问节点&quot;接口" />
+    <MESSAGE value="add: 添加一个todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: 添加一个todo" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
