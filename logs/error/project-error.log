@@ -128,3 +128,20 @@
 {"level":"ERROR","time":"2025-02-05T20:37:20.600+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-02-05T20:37:20.753+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
 {"level":"ERROR","time":"2025-02-05T20:37:21.386+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:20.859+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:20.861+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:23.869+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:26.897+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:29.903+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:31.707+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:31.715+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:32.506+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"etcdserver: request timed out"}
+{"level":"ERROR","time":"2025-02-06T20:34:32.905+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:34:35.519+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:00.828+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:01.002+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:03.828+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:04.003+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T20:35:04.003+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-06T21:36:53.018+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}
+{"level":"ERROR","time":"2025-02-06T21:36:53.019+0800","caller":"login.service.v1/login_service.go:230","msg":"Login TokenVerify error","error":"Token is expired"}

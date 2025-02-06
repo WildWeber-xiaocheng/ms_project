@@ -4,25 +4,21 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;账户列表&quot;接口的api部分">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;账户列表&quot;接口的service部分">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/department.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/member_account.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/dao/project_auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/department.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/member_account.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/data/project_auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/department.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/member_account.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/project_auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/account.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/department.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/repo/project_auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/account.service.v1/account_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/api/project/department.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/pkg/model/department.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/api/proto/department_service.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/pkg/service/department.service.v1/department_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/domain/user_rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/user_rpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/rpc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/department.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/data/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/data/department.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/domain/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/department.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/department.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/department.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/router/router.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,11 +93,11 @@
       <recent name="C:\goCode\ms_project\project-api\api\project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goCode\ms_project\project-grpc\department" />
       <recent name="C:\goCode\ms_project\project-grpc\account" />
       <recent name="C:\goCode\ms_project\project-grpc\project" />
       <recent name="C:\goCode\ms_project\project-grpc\task" />
       <recent name="C:\goCode\ms_project\project-grpc\user\login" />
-      <recent name="C:\goCode\ms_project\project-project\internal\data" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go (2)">
@@ -184,7 +180,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="add: 为project模块的部分接口添加缓存" />
     <MESSAGE value="add: &quot;任务-任务看板&quot;功能api部分" />
     <MESSAGE value="add: &quot;任务-任务看板&quot;功能的部分：添加项目时，保存任务到数据库中" />
@@ -209,7 +204,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="add:y引入domain" />
     <MESSAGE value="add: &quot;账户列表&quot;接口的api部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;账户列表&quot;接口的api部分" />
+    <MESSAGE value="add: &quot;账户列表&quot;接口的service部分" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;账户列表&quot;接口的service部分" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
