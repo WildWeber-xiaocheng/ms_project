@@ -2,6 +2,7 @@ package dao
 
 import (
 	"context"
+	"gorm.io/gorm"
 	"test.com/project-project/internal/data"
 	"test.com/project-project/internal/database/gorms"
 )
@@ -19,6 +20,15 @@ func (m *MemberAccountDao) FindList(ctx context.Context, condition string, organ
 	err = session.Model(&data.MemberAccount{}).
 		Where("organization_code=?", organizationCode).
 		Where(condition).Count(&total).Error
+	return
+}
+
+func (m *MemberAccountDao) FindByMemberId(ctx context.Context, memId int64) (ma *data.MemberAccount, err error) {
+	session := m.conn.Session(ctx)
+	err = session.Where("member_code=?", memId).Take(&ma).Error
+	if err == gorm.ErrRecordNotFound {
+		return nil, nil
+	}
 	return
 }
 

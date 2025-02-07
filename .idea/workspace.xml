@@ -4,23 +4,24 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;授权节点列表&quot;接口">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;保存授权节点&quot;接口">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/api/project/auth_midd.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/pkg/model/project_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/pkg/model/project_auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/auth/auth_service.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-grpc/auth/auth_service_grpc.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/api/proto/auth_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/auth_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/dao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/project_auth_node.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/project_auth_node.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/dao/member_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/dao/member_account.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/domain/member_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/member_account.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/internal/domain/project_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/project_auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/domain/project_auth_node.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/domain/project_auth_node.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/project_auth_node.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/project_auth_node.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/internal/repo/account.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/internal/repo/account.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/pkg/model/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/model/code.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-project/pkg/service/auth.service.v1/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/auth.service.v1/auth_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,30 +63,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build main.go (1).executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build main.go (2).executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build main.go.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build test.com/project-project.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build test.com/project-user.executor&quot;: &quot;Run&quot;,
-    &quot;Go Test.TestGenStruct in test.com/project-common/code_gen.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/goCode/ms_project/project-project/api/proto&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build main.go (1).executor": "Run",
+    "Go Build.go build main.go (2).executor": "Run",
+    "Go Build.go build main.go.executor": "Run",
+    "Go Build.go build test.com/project-project.executor": "Run",
+    "Go Build.go build test.com/project-user.executor": "Run",
+    "Go Test.TestGenStruct in test.com/project-common/code_gen.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/goCode/ms_project/project-project/api/proto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.tools"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\goCode\ms_project\project-project\api\proto" />
@@ -102,7 +103,7 @@
       <recent name="C:\goCode\ms_project\project-api\pkg\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (2)">
+  <component name="RunManager" selected="Go Build.go build main.go (1)">
     <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="ms_project" />
       <working_directory value="$PROJECT_DIR$/project-project" />
@@ -147,9 +148,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
       </list>
@@ -182,7 +183,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: &quot;任务-移动任务&quot;功能的完善" />
     <MESSAGE value="add: &quot;首页-我的任务&quot;功能的完善" />
     <MESSAGE value="fix: jwt生成token添加ip信息" />
     <MESSAGE value="add:为api添加日志中间件，修改部分接口" />
@@ -207,7 +207,8 @@
     <MESSAGE value="add: &quot;访问节点&quot;接口" />
     <MESSAGE value="add: 添加一个todo" />
     <MESSAGE value="add: &quot;授权节点列表&quot;接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;授权节点列表&quot;接口" />
+    <MESSAGE value="add: &quot;保存授权节点&quot;接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;保存授权节点&quot;接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
