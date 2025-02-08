@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;用户授权实现&quot;接口">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;项目授权实现&quot;接口">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/api/project/project_auth_midd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/internal/domain/task_domain.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-grpc/project/project_service_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/api/proto/project_service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/pkg/service/project.service.v1/project_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +167,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: jwt生成token添加ip信息" />
     <MESSAGE value="add:为api添加日志中间件，修改部分接口" />
     <MESSAGE value="add:添加“任务详情”接口" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;logs/debug/project-debug.log&#10;#&#9;logs/info/project-info.log" />
@@ -201,7 +191,8 @@
     <MESSAGE value="add: &quot;授权节点列表&quot;接口" />
     <MESSAGE value="add: &quot;保存授权节点&quot;接口" />
     <MESSAGE value="add: &quot;用户授权实现&quot;接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;用户授权实现&quot;接口" />
+    <MESSAGE value="add: &quot;项目授权实现&quot;接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;项目授权实现&quot;接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

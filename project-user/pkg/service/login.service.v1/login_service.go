@@ -151,6 +151,8 @@ func (ls *LoginService) Register(ctx context.Context, msg *login.RegisterMessage
 		}
 		return nil
 	})
+	//todo
+	//生成账户完毕后要添加一个账户，包含账户的授权角色：成员，新生成一个角色（成员）（如果没有），同时将此角色的Node生成
 	//5. 返回结果
 	return &login.RegisterResponse{}, err
 }
