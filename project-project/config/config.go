@@ -1,6 +1,8 @@
 package config
 
 import (
+	"bytes"
+	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"log"
@@ -53,15 +55,33 @@ type JwtConfig struct {
 func InitConfig() *Config {
 	v := viper.New()
 	conf := &Config{viper: v}
-	workDir, _ := os.Getwd()
-	conf.viper.SetConfigName("config")
+	//先从nacos读取配置，如果读不到，再从本地读取
+	nacosClient := InitNacosClient()
+	configYaml, err2 := nacosClient.confClient.GetConfig(vo.ConfigParam{
+		DataId: "config.yaml",
+		Group:  nacosClient.group,
+	})
+	if err2 != nil {
+		log.Fatalln(err2)
+	}
 	conf.viper.SetConfigType("yaml")
-	conf.viper.AddConfigPath(workDir + "/config")
-
-	err := conf.viper.ReadInConfig()
-	if err != nil {
-		log.Fatalln(err)
-		return nil
+	if configYaml != "" {
+		err := conf.viper.ReadConfig(bytes.NewBuffer([]byte(configYaml)))
+		if err != nil {
+			log.Fatalln(err)
+			return nil
+		}
+		log.Printf("log nacos config %s \n", configYaml)
+	} else {
+		workDir, _ := os.Getwd()
+		conf.viper.SetConfigName("config")
+		//conf.viper.SetConfigType("yaml")
+		conf.viper.AddConfigPath(workDir + "/config")
+		err := conf.viper.ReadInConfig()
+		if err != nil {
+			log.Fatalln(err)
+			return nil
+		}
 	}
 	conf.ReadServerConfig()
 	conf.InitZapLog()

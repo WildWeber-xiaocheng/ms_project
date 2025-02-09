@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: &quot;项目授权实现&quot;接口">
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add: 在注册账户时添加一个todo">
       <change afterPath="$PROJECT_DIR$/profile_test/cpu/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/profile_test/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/config/bootstrap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/config/bootstrap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-project/config/nacos.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.work.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.work.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-project/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +61,7 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultGoTemplateProperty": "Go File",
-    "Go Build.go build main.go (1).executor": "Run",
+    "Go Build.go build main.go (1).executor": "Debug",
     "Go Build.go build main.go (2).executor": "Run",
     "Go Build.go build main.go.executor": "Run",
     "Go Build.go build test.com/project-project.executor": "Run",
@@ -133,8 +143,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go (1)" />
-        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go (2)" />
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build test.com/project-user" />
         <item itemvalue="Go Build.go build test.com/project-project" />
       </list>
@@ -167,7 +177,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add:为api添加日志中间件，修改部分接口" />
     <MESSAGE value="add:添加“任务详情”接口" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;logs/debug/project-debug.log&#10;#&#9;logs/info/project-info.log" />
     <MESSAGE value="add:添加“查看任务动态”的接口" />
@@ -192,9 +201,26 @@
     <MESSAGE value="add: &quot;保存授权节点&quot;接口" />
     <MESSAGE value="add: &quot;用户授权实现&quot;接口" />
     <MESSAGE value="add: &quot;项目授权实现&quot;接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: &quot;项目授权实现&quot;接口" />
+    <MESSAGE value="add: 在注册账户时添加一个todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: 在注册账户时添加一个todo" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/project-project/config/config.go</url>
+          <line>63</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/project-project/config/config.go</url>
+          <line>59</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1226,3 +1226,27 @@
 {"level":"INFO","time":"2025-02-07T23:03:57.170+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 8 ms"}
 {"level":"INFO","time":"2025-02-07T23:03:58.506+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
 {"level":"INFO","time":"2025-02-07T23:03:58.509+0800","caller":"midd/log_time.go:16","msg":"/project/auth 用时 5 ms"}
+{"level":"ERROR","time":"2025-02-09T02:58:18.809+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-09T02:59:24.823+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-09T13:03:01.533+0800","caller":"discovery/resolver.go:104","msg":"sync failed","error":"context deadline exceeded"}
+{"level":"ERROR","time":"2025-02-09T13:03:02.708+0800","caller":"discovery/discovery.go:117","msg":"register failed","error":"context deadline exceeded"}
+{"level":"INFO","time":"2025-02-09T17:00:37.828+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:37.893+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 80 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:40.388+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:40.395+0800","caller":"project/project_auth_midd.go:13","msg":"开始做项目操作授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:40.408+0800","caller":"midd/log_time.go:16","msg":"/project/menu/menu 用时 22 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:44.516+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:44.520+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:44.522+0800","caller":"midd/log_time.go:16","msg":"/project/project 用时 9 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:44.544+0800","caller":"midd/log_time.go:16","msg":"/project/project_template 用时 31 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:46.756+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:46.756+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:46.761+0800","caller":"midd/log_time.go:16","msg":"/project/account 用时 7 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:46.772+0800","caller":"midd/log_time.go:16","msg":"/project/department 用时 18 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:48.443+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:48.443+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:48.449+0800","caller":"midd/log_time.go:16","msg":"/project/project 用时 9 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:48.467+0800","caller":"midd/log_time.go:16","msg":"/project/project_template 用时 26 ms"}
+{"level":"INFO","time":"2025-02-09T17:00:51.691+0800","caller":"project/auth_midd.go:23","msg":"开始做授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:51.695+0800","caller":"project/project_auth_midd.go:13","msg":"开始做项目操作授权认证"}
+{"level":"INFO","time":"2025-02-09T17:00:51.702+0800","caller":"midd/log_time.go:16","msg":"/project/menu/menu 用时 15 ms"}
