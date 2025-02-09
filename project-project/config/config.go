@@ -64,6 +64,22 @@ func InitConfig() *Config {
 	if err2 != nil {
 		log.Fatalln(err2)
 	}
+	err2 = nacosClient.confClient.ListenConfig(vo.ConfigParam{
+		DataId: "config.yaml",
+		Group:  nacosClient.group,
+		OnChange: func(namespace, group, dataId, data string) {
+			log.Printf("log nacos config changed %s \n", data)
+			err := conf.viper.ReadConfig(bytes.NewBuffer([]byte(data)))
+			if err != nil {
+				log.Printf("log nacos config changed err: %s \n", err.Error())
+			}
+			//所有的配置应该重新读取
+			conf.ReLoadAllConfig()
+		},
+	})
+	if err2 != nil {
+		log.Fatalln(err2)
+	}
 	conf.viper.SetConfigType("yaml")
 	if configYaml != "" {
 		err := conf.viper.ReadConfig(bytes.NewBuffer([]byte(configYaml)))
@@ -71,7 +87,7 @@ func InitConfig() *Config {
 			log.Fatalln(err)
 			return nil
 		}
-		log.Printf("log nacos config %s \n", configYaml)
+		log.Printf("log nacos config\n")
 	} else {
 		workDir, _ := os.Getwd()
 		conf.viper.SetConfigName("config")
@@ -83,13 +99,27 @@ func InitConfig() *Config {
 			return nil
 		}
 	}
-	conf.ReadServerConfig()
-	conf.InitZapLog()
-	conf.ReadGrpcConfig()
-	conf.ReadEtcdConfig()
-	conf.InitMysqlConfig()
-	conf.InitJwtConfig()
+	conf.ReLoadAllConfig()
+	//conf.ReadServerConfig()
+	//conf.InitZapLog()
+	//conf.ReadGrpcConfig()
+	//conf.ReadEtcdConfig()
+	//conf.InitMysqlConfig()
+	//conf.InitJwtConfig()
 	return conf
+}
+
+func (c *Config) ReLoadAllConfig() {
+	c.ReadServerConfig()
+	c.InitZapLog()
+	c.ReadGrpcConfig()
+	c.ReadEtcdConfig()
+	c.InitMysqlConfig()
+	c.InitJwtConfig()
+	//c.InitDbConfig() 与主从复制有关
+	//重新创建相关的客户端
+	c.ReConnRedis()
+	c.ReConnMysql()
 }
 
 func (c *Config) ReadServerConfig() {
