@@ -1,8 +1,6 @@
 package config
 
 import (
-	"bytes"
-	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"log"
@@ -52,60 +50,79 @@ type JwtConfig struct {
 	RefreshSecret string
 }
 
+//func InitConfig() *Config {
+//	v := viper.New()
+//	conf := &Config{viper: v}
+//	//先从nacos读取配置，如果读不到，再从本地读取
+//	nacosClient := InitNacosClient()
+//	configYaml, err2 := nacosClient.confClient.GetConfig(vo.ConfigParam{
+//		DataId: "config.yaml",
+//		Group:  nacosClient.group,
+//	})
+//	if err2 != nil {
+//		log.Fatalln(err2)
+//	}
+//	err2 = nacosClient.confClient.ListenConfig(vo.ConfigParam{
+//		DataId: "config.yaml",
+//		Group:  nacosClient.group,
+//		OnChange: func(namespace, group, dataId, data string) {
+//			log.Printf("log nacos config changed %s \n", data)
+//			err := conf.viper.ReadConfig(bytes.NewBuffer([]byte(data)))
+//			if err != nil {
+//				log.Printf("log nacos config changed err: %s \n", err.Error())
+//			}
+//			//所有的配置应该重新读取
+//			conf.ReLoadAllConfig()
+//		},
+//	})
+//	if err2 != nil {
+//		log.Fatalln(err2)
+//	}
+//	conf.viper.SetConfigType("yaml")
+//	if configYaml != "" {
+//		err := conf.viper.ReadConfig(bytes.NewBuffer([]byte(configYaml)))
+//		if err != nil {
+//			log.Fatalln(err)
+//			return nil
+//		}
+//		log.Printf("log nacos config\n")
+//	} else {
+//		workDir, _ := os.Getwd()
+//		conf.viper.SetConfigName("config")
+//		//conf.viper.SetConfigType("yaml")
+//		conf.viper.AddConfigPath(workDir + "/config")
+//		err := conf.viper.ReadInConfig()
+//		if err != nil {
+//			log.Fatalln(err)
+//			return nil
+//		}
+//	}
+//	conf.ReLoadAllConfig()
+//	//conf.ReadServerConfig()
+//	//conf.InitZapLog()
+//	//conf.ReadGrpcConfig()
+//	//conf.ReadEtcdConfig()
+//	//conf.InitMysqlConfig()
+//	//conf.InitJwtConfig()
+//	return conf
+//}
+
 func InitConfig() *Config {
-	v := viper.New()
-	conf := &Config{viper: v}
-	//先从nacos读取配置，如果读不到，再从本地读取
-	nacosClient := InitNacosClient()
-	configYaml, err2 := nacosClient.confClient.GetConfig(vo.ConfigParam{
-		DataId: "config.yaml",
-		Group:  nacosClient.group,
-	})
-	if err2 != nil {
-		log.Fatalln(err2)
-	}
-	err2 = nacosClient.confClient.ListenConfig(vo.ConfigParam{
-		DataId: "config.yaml",
-		Group:  nacosClient.group,
-		OnChange: func(namespace, group, dataId, data string) {
-			log.Printf("log nacos config changed %s \n", data)
-			err := conf.viper.ReadConfig(bytes.NewBuffer([]byte(data)))
-			if err != nil {
-				log.Printf("log nacos config changed err: %s \n", err.Error())
-			}
-			//所有的配置应该重新读取
-			conf.ReLoadAllConfig()
-		},
-	})
-	if err2 != nil {
-		log.Fatalln(err2)
-	}
+	conf := &Config{viper: viper.New()}
+	workDir, _ := os.Getwd()
+	conf.viper.SetConfigName("config")
 	conf.viper.SetConfigType("yaml")
-	if configYaml != "" {
-		err := conf.viper.ReadConfig(bytes.NewBuffer([]byte(configYaml)))
-		if err != nil {
-			log.Fatalln(err)
-			return nil
-		}
-		log.Printf("log nacos config\n")
-	} else {
-		workDir, _ := os.Getwd()
-		conf.viper.SetConfigName("config")
-		//conf.viper.SetConfigType("yaml")
-		conf.viper.AddConfigPath(workDir + "/config")
-		err := conf.viper.ReadInConfig()
-		if err != nil {
-			log.Fatalln(err)
-			return nil
-		}
+	conf.viper.AddConfigPath(workDir + "/config")
+	err := conf.viper.ReadInConfig()
+	if err != nil {
+		log.Fatalln(err)
 	}
-	conf.ReLoadAllConfig()
-	//conf.ReadServerConfig()
-	//conf.InitZapLog()
-	//conf.ReadGrpcConfig()
-	//conf.ReadEtcdConfig()
-	//conf.InitMysqlConfig()
-	//conf.InitJwtConfig()
+	conf.ReadServerConfig()
+	conf.InitZapLog()
+	conf.ReadGrpcConfig()
+	conf.ReadEtcdConfig()
+	conf.InitMysqlConfig()
+	conf.InitJwtConfig()
 	return conf
 }
 
