@@ -1,4 +1,4 @@
-package user
+package rpc
 
 import (
 	"github.com/WildWeber-xiaocheng/ms_project/project-api/config"

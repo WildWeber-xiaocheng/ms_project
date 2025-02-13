@@ -17,5 +17,6 @@ func main() {
 	stop := func() {
 		gc.Stop()
 	}
+	//gin优雅启停
 	srv.Run(r, config.Conf.SC.Name, config.Conf.SC.Addr, stop)
 }

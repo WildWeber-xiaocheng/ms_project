@@ -2,6 +2,7 @@ package user
 
 import (
 	"github.com/WildWeber-xiaocheng/ms_project/project-api/api/midd"
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/api/rpc"
 	"github.com/WildWeber-xiaocheng/ms_project/project-api/router"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -18,7 +19,7 @@ func init() {
 }
 
 func (*RouterUser) Register(r *gin.Engine) {
-	InitRpcUserClient() //初始化grpc客户端连接
+	rpc.InitRpcUserClient() //初始化grpc客户端连接
 	user := New()
 	r.POST("/project/login/getCaptcha", user.GetCaptcha)
 	r.POST("/project/login/register", user.Register)
