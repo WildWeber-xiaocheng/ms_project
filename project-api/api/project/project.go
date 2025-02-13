@@ -17,6 +17,14 @@ import (
 type HandlerProject struct {
 }
 
+// index 升级版帖子列表接口
+// @Summary 升级版帖子列表接口
+// @Description 可按社区按时间或分数排序查询帖子列表接口
+// @Tags 帖子相关接口
+// @Accept application/json
+// @Produce application/json
+// @Success 200
+// @Router /project/index [get]
 func (p HandlerProject) index(c *gin.Context) {
 	result := &common.Result{}
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)

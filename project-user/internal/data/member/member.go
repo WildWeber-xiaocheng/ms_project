@@ -25,5 +25,5 @@ type Member struct {
 }
 
 func (*Member) TableName() string {
-	return "ms_member"
+	return "ms_member.sql"
 }

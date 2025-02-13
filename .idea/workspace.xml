@@ -4,25 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/mysql_init/ms_member.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_init/ms_organization.sql" afterDir="false" />
+    <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="add sql file">
       <change afterPath="$PROJECT_DIR$/project-api/api/user/rpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.work.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.work.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/rpc/user_rpc.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/api/user/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/target/project-api" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-user/internal/data/member/member.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/data/member/member.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-user/target/project-user" beforeDir="false" />
     </list>
@@ -216,7 +207,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add:添加“查看任务动态”的接口" />
     <MESSAGE value="add:添加“查看任务工时列表”的接口" />
     <MESSAGE value="add:添加“添加任务工时”的接口" />
     <MESSAGE value="add:添加“任务-上传文件”的接口" />
@@ -241,7 +231,8 @@
     <MESSAGE value="add: 将project中的config.yaml放入nacos中" />
     <MESSAGE value="add: 引入nacos监听能力，当配置发生改变，无需重启系统既可使用改变后的配置" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="add sql file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sql file" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
