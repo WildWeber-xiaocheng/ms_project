@@ -2,13 +2,13 @@ package project
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/pkg/model"
+	common "github.com/WildWeber-xiaocheng/ms_project/project-common"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/menu"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/copier"
 	"net/http"
-	"test.com/project-api/pkg/model"
-	common "test.com/project-common"
-	"test.com/project-common/errs"
-	"test.com/project-grpc/menu"
 	"time"
 )
 

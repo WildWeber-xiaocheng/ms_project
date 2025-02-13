@@ -2,7 +2,7 @@ package user
 
 import (
 	"errors"
-	common "test.com/project-common"
+	common "github.com/WildWeber-xiaocheng/ms_project/project-common"
 )
 
 type RegisterReq struct {

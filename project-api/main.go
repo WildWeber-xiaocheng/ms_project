@@ -1,17 +1,17 @@
 package main
 
 import (
+	_ "github.com/WildWeber-xiaocheng/ms_project/project-api/api"
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/api/midd"
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/config"
+	_ "github.com/WildWeber-xiaocheng/ms_project/project-api/docs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/router"
+	srv "github.com/WildWeber-xiaocheng/ms_project/project-common"
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"net/http"
-	_ "test.com/project-api/api"
-	"test.com/project-api/api/midd"
-	"test.com/project-api/config"
-	_ "test.com/project-api/docs"
-	"test.com/project-api/router"
-	srv "test.com/project-common"
 )
 
 // @title project-api

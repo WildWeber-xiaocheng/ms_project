@@ -1,19 +1,19 @@
 package project
 
 import (
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/config"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/discovery"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/logs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/account"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/auth"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/department"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/menu"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/project"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/task"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/resolver"
 	"log"
-	"test.com/project-api/config"
-	"test.com/project-common/discovery"
-	"test.com/project-common/logs"
-	"test.com/project-grpc/account"
-	"test.com/project-grpc/auth"
-	"test.com/project-grpc/department"
-	"test.com/project-grpc/menu"
-	"test.com/project-grpc/project"
-	"test.com/project-grpc/task"
 )
 
 var ProjectServiceClient project.ProjectServiceClient

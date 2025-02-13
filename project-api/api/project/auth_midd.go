@@ -1,12 +1,12 @@
 package project
 
 import (
+	common "github.com/WildWeber-xiaocheng/ms_project/project-common"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"net/http"
 	"strings"
-	common "test.com/project-common"
-	"test.com/project-common/errs"
 )
 
 // 不需要做授权操作的Url

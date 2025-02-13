@@ -1,11 +1,11 @@
 package project
 
 import (
+	common "github.com/WildWeber-xiaocheng/ms_project/project-common"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"net/http"
-	common "test.com/project-common"
-	"test.com/project-common/errs"
 )
 
 func ProjectAuth() func(*gin.Context) { //如果此用户不是项目的成员，认为你不能查看，不能操作此项目，直接报无权限

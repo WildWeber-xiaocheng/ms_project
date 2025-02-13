@@ -2,12 +2,12 @@ package midd
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/api/user"
+	common "github.com/WildWeber-xiaocheng/ms_project/project-common"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/user/login"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"test.com/project-api/api/rpc"
-	common "test.com/project-common"
-	"test.com/project-common/errs"
-	"test.com/project-grpc/user/login"
 	"time"
 )
 
@@ -31,7 +31,7 @@ func TokenVerify() func(ctx *gin.Context) {
 		ip := GetIp(c)
 		//todo
 		//可以先去查询node表，确认不使用登录控制的接口，就不做登录认证
-		response, err := rpc.LoginServiceClient.TokenVerify(ctx, &login.LoginMessage{Token: token, Ip: ip})
+		response, err := user.LoginServiceClient.TokenVerify(ctx, &login.LoginMessage{Token: token, Ip: ip})
 		//3. 处理结果，认证通过，将信息放入gin的上下文，失败则返回未登录
 		if err != nil {
 			code, msg := errs.ParseGrpcError(err)
