@@ -5,25 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06a2b04a-9314-4782-bf13-b6d395b717b4" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-api/config/config-docker.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-project/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql_init/ms_member.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql_init/ms_organization.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-api/api/user/rpc.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.work.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.work.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug/project-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug/project-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error/project-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error/project-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info/project-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info/project-info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-api/api/project/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/project/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/project/project.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/rpc/user_rpc.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/api/user/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/api/user/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-api/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-api/target/project-api" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/config/config-docker.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/config/config-docker.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-project/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-project/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/config/config-docker.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/config/config-docker.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-user/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-user/internal/data/member/member.go" beforeDir="false" afterPath="$PROJECT_DIR$/project-user/internal/data/member/member.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-user/target/project-user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="Dockerfile" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -69,38 +70,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Docker.docker-compose.yaml.Etcd: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.Project-Api: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.Project-Project: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.Project-User: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.mysql: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.project-api/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.project-user/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.project-user/docker-compose.yaml.Project-User: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build main.go (1).executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build main.go (2).executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build main.go.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build test.com/project-project.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build test.com/project-user.executor&quot;: &quot;Run&quot;,
-    &quot;Go Test.TestGenStruct in test.com/project-common/code_gen.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/goCode/ms_project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "Docker.docker-compose.yaml.Etcd: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.Project-Api: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.Project-Project: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.Project-User: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.mysql: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.project-api/Dockerfile.executor": "Run",
+    "Docker.project-user/Dockerfile.executor": "Run",
+    "Docker.project-user/docker-compose.yaml.Project-User: Compose Deployment.executor": "Run",
+    "Go Build.go build main.go (1).executor": "Run",
+    "Go Build.go build main.go (2).executor": "Run",
+    "Go Build.go build main.go.executor": "Run",
+    "Go Build.go build test.com/project-project.executor": "Run",
+    "Go Build.go build test.com/project-user.executor": "Run",
+    "Go Test.TestGenStruct in test.com/project-common/code_gen.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/goCode/ms_project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.tools"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\goCode\ms_project" />
@@ -117,7 +119,33 @@
       <recent name="C:\goCode\ms_project\project-api\pkg\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yaml.Project-User: Compose Deployment">
+  <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ms_project" />
+      <working_directory value="$PROJECT_DIR$/project-api" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/project-api/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build test.com/project-project" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ms_project" />
+      <working_directory value="$PROJECT_DIR$/project-project" />
+      <kind value="PACKAGE" />
+      <package value="test.com/project-project" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/project-project/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build test.com/project-user" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ms_project" />
+      <working_directory value="$PROJECT_DIR$/project-user" />
+      <kind value="PACKAGE" />
+      <package value="test.com/project-user" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/project-user/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -130,27 +158,9 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yaml.Project-Api: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="services">
-            <list>
-              <option value="Project-Api" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yaml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yaml.Project-Project: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="Project-Project" />
-            </list>
-          </option>
           <option name="sourceFilePath" value="docker-compose.yaml" />
         </settings>
       </deployment>
@@ -169,34 +179,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yaml.mysql: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="mysql" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yaml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="project-user/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="project-user/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build test.com/project-project" />
+        <item itemvalue="Go Build.go build test.com/project-user" />
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.Project-User: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yaml.Project-Project: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yaml.mysql: Compose Deployment" />
-        <item itemvalue="Docker.project-user/Dockerfile" />
-        <item itemvalue="Docker.docker-compose.yaml.Project-Api: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -260,11 +249,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/project-user/config/config.go</url>
-          <line>91</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/project-user/internal/database/gorms/gorms.go</url>
           <line>14</line>

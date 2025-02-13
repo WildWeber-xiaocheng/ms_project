@@ -45,24 +45,24 @@ services:
     ports:
       - ${ETCD_PORT}:2379
       - 2380:2380
-  Project-User:
-    container_name: project-user
-    image: project-user:latest
-    ports:
-      - 8080:8080
-    networks:
-      - mynetwork
-  Project-Api:
-    container_name: project-api
-    image: project-api:latest
-    ports:
-      - 80:80
-    networks:
-      - mynetwork
-  Project-Project:
-    container_name: project-project
-    image: project-project:latest
-    ports:
-      - 8081:8081
-    networks:
-      - mynetwork
+#  Project-User:
+#    container_name: project-user
+#    image: project-user:latest
+#    ports:
+#      - 8080:8080
+#    networks:
+#      - mynetwork
+#  Project-Api:
+#    container_name: project-api
+#    image: project-api:latest
+#    ports:
+#      - 80:80
+#    networks:
+#      - mynetwork
+#  Project-Project:
+#    container_name: project-project
+#    image: project-project:latest
+#    ports:
+#      - 8081:8081
+#    networks:
+#      - mynetwork
