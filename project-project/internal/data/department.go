@@ -1,9 +1,9 @@
 package data
 
 import (
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/encrypts"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/tms"
 	"github.com/jinzhu/copier"
-	"test.com/project-common/encrypts"
-	"test.com/project-common/tms"
 )
 
 type Department struct {

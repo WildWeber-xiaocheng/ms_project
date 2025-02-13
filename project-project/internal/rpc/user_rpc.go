@@ -1,14 +1,14 @@
 package rpc
 
 import (
+	"github.com/WildWeber-xiaocheng/ms_project/project-api/config"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/discovery"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/logs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/user/login"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/resolver"
 	"log"
-	"test.com/project-api/config"
-	"test.com/project-common/discovery"
-	"test.com/project-common/logs"
-	"test.com/project-grpc/user/login"
 )
 
 var LoginServiceClient login.LoginServiceClient

@@ -2,14 +2,14 @@ package department_service_v1
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/encrypts"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/department"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/dao"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database/tran"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/domain"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/repo"
 	"github.com/jinzhu/copier"
-	"test.com/project-common/encrypts"
-	"test.com/project-common/errs"
-	"test.com/project-grpc/department"
-	"test.com/project-project/internal/dao"
-	"test.com/project-project/internal/database/tran"
-	"test.com/project-project/internal/domain"
-	"test.com/project-project/internal/repo"
 )
 
 type DepartmentService struct {

@@ -2,7 +2,7 @@ package repo
 
 import (
 	"context"
-	"test.com/project-project/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database"
 )
 
 type ProjectAuthNodeRepo interface {

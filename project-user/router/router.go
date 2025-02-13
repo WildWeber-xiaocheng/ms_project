@@ -1,17 +1,17 @@
 package router
 
 import (
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/discovery"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/logs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/user/login"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/config"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/interceptor"
+	loginServiceV1 "github.com/WildWeber-xiaocheng/ms_project/project-user/pkg/service/login.service.v1"
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/resolver"
 	"log"
 	"net"
-	"test.com/project-common/discovery"
-	"test.com/project-common/logs"
-	"test.com/project-grpc/user/login"
-	"test.com/project-user/config"
-	"test.com/project-user/internal/interceptor"
-	loginServiceV1 "test.com/project-user/pkg/service/login.service.v1"
 )
 
 // Router接口

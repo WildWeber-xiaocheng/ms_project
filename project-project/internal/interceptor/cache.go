@@ -3,12 +3,12 @@ package interceptor
 import (
 	"context"
 	"encoding/json"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/encrypts"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/project"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/dao"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/repo"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
-	"test.com/project-common/encrypts"
-	"test.com/project-grpc/project"
-	"test.com/project-project/internal/dao"
-	"test.com/project-project/internal/repo"
 	"time"
 )
 

@@ -3,10 +3,10 @@ package gorms
 import (
 	"context"
 	"fmt"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"test.com/project-user/config"
 )
 
 var _db *gorm.DB

@@ -1,9 +1,9 @@
 package data
 
 import (
-	"test.com/project-common/encrypts"
-	"test.com/project-common/tms"
-	"test.com/project-project/pkg/model"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/encrypts"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/tms"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/pkg/model"
 )
 
 type Project struct {

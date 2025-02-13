@@ -2,8 +2,8 @@ package dao
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/config"
 	"github.com/redis/go-redis/v9"
-	"test.com/project-user/config"
 	"time"
 )
 

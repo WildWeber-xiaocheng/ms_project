@@ -1,11 +1,11 @@
 package config
 
 import (
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/logs"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"log"
 	"os"
-	"test.com/project-common/logs"
 )
 
 var Conf = InitConfig()

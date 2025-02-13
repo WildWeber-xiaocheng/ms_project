@@ -2,14 +2,14 @@ package menu_service_v1
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/menu"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/dao"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database/tran"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/domain"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/repo"
 	"github.com/jinzhu/copier"
 	"go.uber.org/zap"
-	"test.com/project-common/errs"
-	"test.com/project-grpc/menu"
-	"test.com/project-project/internal/dao"
-	"test.com/project-project/internal/database/tran"
-	"test.com/project-project/internal/domain"
-	"test.com/project-project/internal/repo"
 )
 
 type MenuService struct {

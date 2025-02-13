@@ -2,9 +2,9 @@ package dao
 
 import (
 	"errors"
-	"test.com/project-common/errs"
-	"test.com/project-project/internal/database"
-	"test.com/project-project/internal/database/gorms"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database/gorms"
 )
 
 type TransactionImpl struct {

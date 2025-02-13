@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"test.com/project-user/internal/database"
-	"test.com/project-user/internal/database/gorms"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database/gorms"
 )
 
 type TransactionImpl struct {

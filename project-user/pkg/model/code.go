@@ -1,7 +1,7 @@
 package model
 
 import (
-	"test.com/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
 )
 
 var (

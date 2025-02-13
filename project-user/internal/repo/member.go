@@ -2,8 +2,8 @@ package repo
 
 import (
 	"context"
-	"test.com/project-user/internal/data/member"
-	"test.com/project-user/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/data/member"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database"
 )
 
 type MemberRepo interface {

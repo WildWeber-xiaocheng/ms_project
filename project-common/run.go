@@ -11,6 +11,7 @@ import (
 	"time"
 )
 
+// gin优雅启停，参照Gin官方文档
 func Run(r *gin.Engine, serverName string, addr string, stop func()) {
 	srv := &http.Server{
 		Addr:    addr,

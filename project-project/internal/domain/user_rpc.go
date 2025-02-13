@@ -2,8 +2,8 @@ package domain
 
 import (
 	"context"
-	"test.com/project-grpc/user/login"
-	"test.com/project-project/internal/rpc"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/user/login"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/rpc"
 	"time"
 )
 

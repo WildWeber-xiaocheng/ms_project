@@ -1,10 +1,10 @@
 package main
 
 import (
+	srv "github.com/WildWeber-xiaocheng/ms_project/project-common"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/config"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/router"
 	"github.com/gin-gonic/gin"
-	srv "test.com/project-common"
-	"test.com/project-project/config"
-	"test.com/project-project/router"
 )
 
 func main() {

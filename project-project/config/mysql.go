@@ -2,11 +2,11 @@ package config
 
 import (
 	"fmt"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database/gorms"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"test.com/project-project/internal/database/gorms"
 )
 
 var _db *gorm.DB

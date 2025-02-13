@@ -2,10 +2,10 @@ package domain
 
 import (
 	"context"
-	"test.com/project-common/errs"
-	"test.com/project-project/internal/dao"
-	"test.com/project-project/internal/repo"
-	"test.com/project-project/pkg/model"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/dao"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/repo"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/pkg/model"
 )
 
 type TaskDomain struct {

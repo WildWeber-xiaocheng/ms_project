@@ -1,4 +1,4 @@
-module test.com/project-project
+module github.com/WildWeber-xiaocheng/ms_project/project-project
 
 go 1.23.2
 

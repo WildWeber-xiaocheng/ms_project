@@ -2,13 +2,13 @@ package project_service_v1
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/encrypts"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/project"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/data"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/pkg/model"
 	"go.uber.org/zap"
 	"strconv"
-	"test.com/project-common/encrypts"
-	"test.com/project-common/errs"
-	"test.com/project-grpc/project"
-	"test.com/project-project/internal/data"
-	"test.com/project-project/pkg/model"
 	"time"
 )
 

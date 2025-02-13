@@ -1,4 +1,4 @@
-module test.com/project-common
+module github.com/WildWeber-xiaocheng/ms_project/project-common
 
 go 1.23.2
 

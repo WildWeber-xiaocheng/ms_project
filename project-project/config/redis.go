@@ -1,8 +1,8 @@
 package config
 
 import (
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/dao"
 	"github.com/redis/go-redis/v9"
-	"test.com/project-project/internal/dao"
 )
 
 func (c *Config) ReConnRedis() {

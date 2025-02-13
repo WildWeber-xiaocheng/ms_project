@@ -2,9 +2,9 @@ package dao
 
 import (
 	"context"
-	"test.com/project-project/internal/data"
-	"test.com/project-project/internal/database"
-	"test.com/project-project/internal/database/gorms"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/data"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database/gorms"
 )
 
 type TaskStagesDao struct {

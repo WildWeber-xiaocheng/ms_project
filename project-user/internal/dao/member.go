@@ -2,10 +2,10 @@ package dao
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/data/member"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database/gorms"
 	"gorm.io/gorm"
-	"test.com/project-user/internal/data/member"
-	"test.com/project-user/internal/database"
-	"test.com/project-user/internal/database/gorms"
 )
 
 type MemberDao struct {

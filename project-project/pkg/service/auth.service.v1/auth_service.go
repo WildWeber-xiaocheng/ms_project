@@ -2,15 +2,15 @@ package auth_service_v1
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/encrypts"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/auth"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/dao"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/database/tran"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/domain"
+	"github.com/WildWeber-xiaocheng/ms_project/project-project/internal/repo"
 	"github.com/jinzhu/copier"
-	"test.com/project-common/encrypts"
-	"test.com/project-common/errs"
-	"test.com/project-grpc/auth"
-	"test.com/project-project/internal/dao"
-	"test.com/project-project/internal/database"
-	"test.com/project-project/internal/database/tran"
-	"test.com/project-project/internal/domain"
-	"test.com/project-project/internal/repo"
 )
 
 type AuthService struct {

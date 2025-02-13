@@ -2,9 +2,9 @@ package project_service_v1
 
 import (
 	"context"
+	"github.com/WildWeber-xiaocheng/ms_project/project-common/errs"
+	"github.com/WildWeber-xiaocheng/ms_project/project-grpc/project"
 	"github.com/jinzhu/copier"
-	"test.com/project-common/errs"
-	"test.com/project-grpc/project"
 )
 
 func (p *ProjectService) NodeList(c context.Context, msg *project.ProjectRpcMessage) (*project.ProjectNodeResponseMessage, error) {

@@ -1,1 +1,1 @@
-module test.com/project-grpc
+module github.com/WildWeber-xiaocheng/ms_project/project-grpc

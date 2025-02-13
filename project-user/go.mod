@@ -1,4 +1,4 @@
-module test.com/project-user
+module github.com/WildWeber-xiaocheng/ms_project/project-user
 
 go 1.23.2
 

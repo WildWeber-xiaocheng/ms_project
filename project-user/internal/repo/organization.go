@@ -2,8 +2,8 @@ package repo
 
 import (
 	"context"
-	"test.com/project-user/internal/data/organization"
-	"test.com/project-user/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/data/organization"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database"
 )
 
 type OrganizationRepo interface {

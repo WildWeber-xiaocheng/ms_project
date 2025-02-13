@@ -2,9 +2,9 @@ package dao
 
 import (
 	"context"
-	"test.com/project-user/internal/data/organization"
-	"test.com/project-user/internal/database"
-	"test.com/project-user/internal/database/gorms"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/data/organization"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database"
+	"github.com/WildWeber-xiaocheng/ms_project/project-user/internal/database/gorms"
 )
 
 type OrganizationDao struct {
